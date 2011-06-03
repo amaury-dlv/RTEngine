@@ -8,3 +8,4 @@ tags
 *.vim
 .*.sw*
 Makefile.dep
+.DS_Store

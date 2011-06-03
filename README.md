@@ -1,3 +1,6 @@
+![](Gallery/dragon.jpg)
+128min. on a 40 node cluster.
+
 # RTEngine #
 
 This is a raytracing engine written in C.
@@ -11,10 +14,16 @@ model). Note this does not help for performances either ;).
 
 # Renderings #
 
-* [Slides](slides.pdf?raw=true) (in French)
+* [Slides](http://www.slideshare.net/amaury_dlv/slides-19342945) (in French)
 * [Gallery](Gallery/)
 
-The following images were rendered in ~1h each on a 200+ node cluster.
 
-![](Gallery/dragon.jpg)
 ![](Gallery/cornell.png)
+129min. on a 130 node cluster.
+
+# Members #
+
+* Amaury Patard de la Vieuville
+* Ahmed Bougacha
+* Mickael Rodrigues
+* Aymeric Beaumet
