@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<!-- <rendering size="600 600" depth="5" sampler="900x1777" samplerSharing="0" /> -->
+		<rendering size="600 600" />
+		<camera type="pinhole" eye="-8, 5.5, 40" lookat="1, 4, 0" up="0, -1, 0"
+			dis="2400"/>-->
+	</image>
+
+	<renderpass>
+		<pass type="oversampling" aa="100"/>
+	</renderpass>
+
+	<materials>
+		<material type="transparent" color="0 0 0"
+			  kd="1" ks="0.2" kr="0.1" cr="1" exp="2000"
+			  kt="0.9" ior="1.1" id="glass_ptr"/>
+
+		<material type="reflective" color="1 0 0" id="reflective_red_sphere"
+			  kd="0.3" ks="0.2" kr="0.25" cr="1" exp="2000"/>
+
+		<material type="checker" color=".75 .75 .75" color2="0.75 0.75 0.75" size="4"
+			  id="checkergrey" kd="0.35" ks="0" exp="0" kr="0" cr="0" kt="0" ior="0"/>
+	</materials>
+
+	<objects>
+		<object type="sphere" coor="0 4.5 0" size="3" id_mat="glass_ptr"/>
+		<object type="sphere" coor="4 4 -6"  size="3" id_mat="reflective_red_sphere"/>
+		<!-- <object type="plane"  coor="-20 0 -100" normal="0 1 0" id_mat="checkergrey"/> -->
+		<object type="rectangle" coor="-20 0 -100" u="0 0 120" v="40 0 0" normal="0 1 0" id_mat="checkergrey"/>
+
+		<!-- original rectangle-->
+		<!-- Point3D p0(-20, 0, -100); -->
+		<!-- Vector3D a(0, 0, 120); -->
+		<!-- Vector3D b(40, 0, 0); -->
+	</objects>
+
+	<lights>
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.25"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="4.5" pos="40 50 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="4.5" pos="-10 20 10"/>
+		<light type="directional" color="1.0, 1.0, 1.0" radiance="4.5" vec="-1 0 0"/>
+	</lights>
+</scene>

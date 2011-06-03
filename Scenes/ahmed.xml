@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<camera type="pinhole" eye="-8, 5.5, 40" lookat="1, 4, 0" up="0, -1, 0"
+			dis="2500" zoom="800"/>-->
+	</image>
+
+	<renderpass>
+		<pass type="light"/>
+		<pass type="shadow"/>
+		<pass type="texture"/>
+		<pass type="transparency"/>
+		<pass type="reflection"/>
+	</renderpass>
+
+	<materials>
+		<material type="transparent" color="0 0 0" kd="1"
+			ks="0.2" kr="0.1" cr="1" exp="2000"
+			kt="0.9" ior="1.04" id="glass_ptr"/>
+
+		<material type="reflective" color="1 0 0" kd="0.3"
+			ks="0.2" kr="0.25" cr="1"
+			exp="2000" id="reflective_red_sphere"/>
+
+		<material type="matte" color=".5 .5 .5"
+			kd="1" id="mattegrey"/>
+
+		<material type="checker" color="1 1 1" color2="0.75 0.75 0.75" size="4"
+			  id="checkergrey" kd="0.35" ks="0" exp="100" kr="0" cr="0"/>
+
+		<material type="noise" noiset="turbulence" color="1 0 0" color2="1 0 1"
+			  octaves="6.0" min="0.15" max="0.75" gain="0.5" lacunarity="2.0"
+			  kd="0.3" ks="0.2" kr="0.25" cr="1"
+			  exp="2000" id="noise_red_sphere"/>
+
+		<!-- <material type="noise" noiset="turbulence" color="0.45 0.78 0.19" color2="0.1 1 0.2" -->
+		<!-- 	  octaves="5.0" max="5.0" min="-1.5" gain="0.5" lacunarity="2" -->
+		<!-- 	  id="noisegreen"  kd="0.75" ks="0.4" exp="100" kr="0.7" cr="0.75"/> -->
+
+	</materials>
+
+	<objects>
+		<object type="sphere" coor="0 4.5 0" size="3" id_mat="glass_ptr"/>
+		<object type="sphere" coor="4 4 -6"  size="3" id_mat="noise_red_sphere"/>
+		<!-- <object type="sphere" coor="4 4 -6"  size="3" id_mat="reflective_red_sphere"/> -->
+		<object type="plane"  coor="0 0 0" normal="0 1 0" id_mat="checkergrey"/>
+
+		<!-- <object type="box" coor="-20 0 -100"
+		     ax="0" ay="0" az="-100"
+		     bx="40" by="0" bz="0"
+		     id_mat="checkergrey"/> -->
+
+		<!-- original rectangle-->
+		<!-- Point3D p0(-20, 0, -100); -->
+		<!-- Vector3D a(0, 0, 120); -->
+		<!-- Vector3D b(40, 0, 0); -->
+	</objects>
+
+	<lights>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="4.5" pos="40 50 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="4.5" pos="-10 20 10"/>
+		<light type="directional" color="1.0, 1.0, 1.0" radiance="4.5" vec="-1 0 0"/>
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.25"/>
+	</lights>
+</scene>

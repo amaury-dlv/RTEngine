@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<renderpass>
+		<pass type="light"/>
+          <!--
+                -->
+		<pass type="shadow"/>
+		<pass type="transparency"/>
+		<pass type="reflection"/>
+                <!--
+                <pass type="gamma" e="0.5"/>
+              -->
+                <pass type="tone mapping" coeff="40"/>
+	</renderpass>
+	<image>
+		<camera type="pinhole" eye="0, -40, 0" lookat="0, 0, 0" up="0, 1, 0"
+			dis="1000" zoom="800"/>-->
+		<camera type="fisheye" eye="-100 -5 0" lookat="0 0 0" up="0, 1, 0"
+			psi="30"/>-->
+		<camera type="spherical" eye="-100, -5, 0" lookat="0 0 0" up="0, 1, 0"
+			lambda="50" psi="30"/>-->
+	</image>
+	<materials>
+		<material type="matte" color="0 .5 0" id="mattegreen"  kd="0.75"/>
+		<material type="matte" color=".5 0 0" id="mattered"  kd="0.75"/>
+		<material type="matte" color="1 0 1" id="mattepink"  kd="0.75"/>
+		<material type="matte" color="1 1 1" id="matteblanc"  kd="0.75"/>
+		<material type="matte" color="1 1 1" id="matteblanc2"  kd="0.25"/>
+		<!-- -->
+		<material type="phong" color="0 0 1" kd="0.75" ks="0.4" exp="100" id="bluephong"/>
+		<material type="phong" color="0 1 0" kd="0.75" ks="0.4" exp="100" id="greenphong"/>
+	</materials>
+	<objects>
+		<object type="plane" coor="-12, 0, 0" normal="1 0 0" id_mat="mattered"/>
+		<object type="plane" coor="12, 0, 0" normal="-1 0 0" id_mat="mattegreen"/>
+		<object type="plane" coor="0, 10, 0" normal="0 -1 0" id_mat="matteblanc"/>
+		<object type="plane" coor="0, 0, 10" normal="0 0 -1" id_mat="matteblanc"/>-->
+		<object type="plane" coor="0, 0, -10" normal="0 0 1" id_mat="matteblanc"/>-->
+		<object type="box" coor="0 0 0" ax="-8" ay="-8" az="5" bx="-5" by="-5" bz="10" id_mat="matteblanc"/>
+		<object type="sphere" coor="0, 0, 5" size="5" id_mat="matteblanc"/>
+		<!--
+		<object type="sphere" coor="-10 0 10" size="5" id_mat="bluephong"/>
+		<object type="sphere" coor="-50 0 -10" size="10" id_mat="bluephong"/>
+		<object type="sphere" coor="-30 0 0" size="5" id_mat="greenphong"/>
+		<object type="sphere" coor="0 0 0" size="5" id_mat="mattegreen"/>
+		<object type="sphere" coor="-80 0 -10" size="3" id_mat="bluephong"/>
+		<object type="sphere" coor="0 0 15" size="5" id_mat="mattegreen"/>-->
+	</objects>
+	<lights>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="500" pos="0 -10 -6"/>
+		<!--<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.5"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>-->
+	</lights>
+</scene>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<camera type="pinhole" eye="-1000, 1000, 0" lookat="0, 0, 0" up="0, 0, -1" dis="100" zoom="800"/>
+	</image>
+	<materials>
+		<material type="phong" color="1 0 0" kd="0.8" ks="0.4" exp="100" id="redphong"/>
+		<material type="phong" color="0 0.5 0" kd="0.8" ks="0.4" exp="100" id="greenphong"/>
+		<material type="matte" color="1 0 1" kd="0.8" id="pinkmatte"/>
+	</materials>
+	<objects>
+		<object type="sphere" coor="0, 0, 0" size="590" id_mat="redphong"/>
+		<object type="sphere" coor="-500, -500, -500" size="100" id_mat="redphong"/>
+		<object type="plane" coor="0, 0, -590" normal="0 0 1" id_mat="pinkmatte"/>
+		<object type="cylinder" coor="500 0 0" size="500" y1="2000" y2="-2000" id_mat="greenphong"/>
+		<object type="tore" coor="0 0 0" rad="500" t="20" id_mat="greenphong"/>
+	</objects>
+	<lights>
+		<!-- <light type="directional" vec="0 0 0" radiance="10" color="1 1 1"/> -->
+		<light type="point" pos="0 30000 0" radiance="1" color="1 1 1"/>
+		<light type="ambient" radiance="0.55" color="1 1 1"/>
+	</lights>
+</scene>

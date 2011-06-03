@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+
+	<image>
+		<!-- <rendering size="800 600" depth="100" sampler="900x1777" samplerSharing="0"/> -->
+		<camera type="pinhole" eye="75 40 100" lookat="-10 39 0" up="0, -1, 0"
+			dis="360"/>
+	</image>
+
+	<renderpass>
+		<pass type="light"/>
+		<pass type="ambient occlusion" samples="625"/>
+		<!-- <pass type="oversampling" aa="4"/> -->
+		<!-- <pass type="ambient occlusion" samples="100"/> -->
+		<!-- <pass type="reflection"/> -->
+		<!-- <pass type="texture"/> -->
+		<!-- <pass type="shadow"/> -->
+		<!-- <pass type="area light" samples="4"/> -->
+	</renderpass>
+
+	<materials>
+ 		<material type="glossy" color="1 1 0.3" kd="0.7" ks="0.5" kr="0.9" cr="1" exp="100" id="tore"/>
+
+		<!-- <material type="reflective" color="0.75 0.75 0" id="reflective tore" -->
+		<!-- 	  ka="0.25" kd="0.5" ks="0.15" exp="100" kr="0.75" cr="1"/> -->
+
+		<material type="matte" color=".75 0 0" id="small sphere" ka="0.4" kd="0.5"/>
+
+		<material type="matte" color="0.75 0.25 0" id="orange non-reflective sphere" ka="0.45" kd="0.75"/>
+
+		<material type="transparent" color="0 0 0"
+			  kd="1" ks="0.2" kr="0.1" cr="1" exp="2000"
+			  kt="0.9" ior="1.2" id="sphere on top of box"/>
+
+		<!-- <material type="phong" color=".5 .36 .87" id="sphere on top of box" -->
+		<!-- 	  ka="0.35" kd="0.75" ks="0.0" exp="1.0" kr="0.75" cr="1"/> -->
+
+		<material type="glossy" color=".35 .75 .55" kd="0.56" ks="0.6" kr="0.9" cr="1" exp="100" id="cylinder"/>
+
+		<material type="glossy" color="0.4 0.5 1.0" kd="0.3" ks="0.5" kr="0.9" cr="1.5" exp="100" id="box"/>
+
+		<material type="phong" color="1 1 1" color2="0 0 0" size="20" id="ground plane"
+			  ka="0.3" kd="0.9" ks="0" exp="100" kr="0" cr="1" kt="1" ior="1"/>
+
+		<material type="phong" color="0.25 0.25 0.75" color2="0 0 0" size="20" id="disc"
+			  ka="0.3" kd="0.9" ks="0" exp="100" kr="0" cr="1" kt="1" ior="1"/>
+
+		<material type="phong" color=".6 .2 .8" id="cone"
+			  ka="0.75" kd="0.75" ks="0.15" exp="10.0" kr="0.75" cr="1"/>
+
+		<!-- <material type="checker" color="1 1 1" color2="0.75 0.75 0.75" size="20" -->
+		<!-- 	  id="ground" kd="1" ks="0" exp="100" kr="0" cr="0" kt="0" ior="1"/> -->
+
+		<material type="matte" id="right rectangle" kd="0.6" color=".8 .4 .1"/>
+	</materials>
+
+	<objects>
+		<object type="sphere" coor="34 12 13" size="12" id_mat="small sphere"/>
+		<!-- <object type="sphere" coor="-30 59 35" size="20" id_mat="sphere on top of box"/> -->
+
+		<object type="cylinder" coor="0 0 0" size="22" y1="85" y2="0" id_mat="cylinder"/>
+
+		<object type="box" ax="-35" ay="0" az="-110" bx="-25" by="60" bz="65" id_mat="box"/>
+
+		<object type="cone" coor="-7 30 42" size="5" y1="-30" y2="0" alpha="0.5" id_mat="cone"/>
+
+		<object type="tore" coor="50 50 -25" rad="25" t="7" rot="90 50 0" id_mat="tore"/>
+
+		<object type="disc" coor="0 2.5 -50" radius="50" rot="0 -90 0" normal="-1 0 0" id_mat="disc"/>
+
+		<object type="plane" normal="0 1 0" id_mat="ground plane"/>
+
+		<object type="rectangle" id_mat="right rectangle"
+			coor="-80 0 50" normal="-1 0 0"
+			u="0 0 55.92" v="0 54.88 0"/>
+	</objects>
+
+	<lights>
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="1"/>
+		<!-- <light type="point" color="1.0, 1.0, 1.0" radiance="0.75" pos="150 150 0"/> -->
+	</lights>
+
+</scene>

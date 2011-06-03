@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<!-- noiset="turbulence" / "fBm" / "fractal_sum" -->
+<scene>
+	<image>
+		<camera type="pinhole" eye="0, -40, 0" lookat="0, 0, 0" up="0, 1, 0"
+			dis="1000" zoom="800"/>-->
+		<camera type="fisheye" eye="-100 -5 0" lookat="0 0 0" up="0, 1, 0"
+			psi="30"/>-->
+		<camera type="spherical" eye="-100, -5, 0" lookat="0 0 0" up="0, 1, 0"
+			lambda="50" psi="30"/>-->
+	</image>
+	<renderpass>
+		<pass type="light"/>
+		<pass type="texture"/>
+		<pass type="shadow"/>
+		<pass type="transparency"/>
+		<pass type="reflection"/>
+	</renderpass>
+
+	<materials>
+		<material type="noise" noiset="turbulence" color="0.45 0.78 0.19" color2="0.1 1 0.2"
+			  octaves="5.0" max="5.0" min="-1.5" gain="0.5" lacunarity="2"
+			  id="noisegreen"  kd="0.75" ks="0.4" exp="100" kr="0.7" cr="0.75"/>
+
+		<material type="noise" noiset="fbm" color="1 0 0" color2="1 0.2 0.1"
+			  octaves="6.0" gain="0.2" lacunarity="2" max="1.5" min="-1.5"
+			  id="noisered"  kd="0.75" ks="0.4" exp="100" kr="0.7" cr="0.75"/>
+
+		<material type="noise" size="0.4" noiset="turbulence" color="1 1 0" color2="0.75 0.75 0.75"
+			  octaves="5.0" gain="0.3" lacunarity="0.6" max="1.5" min="-1.5"
+			  id="noisepink"  kd="0.75" ks="0.4" exp="100" kr="0.7" cr="0.75"/>
+
+		<material type="noise" noiset="cosX" color="1 1 0" color2="0 0 0"
+			  octaves="6.0" gain="0.6" lacunarity="2" max="0.75" min="0.15"
+			  id="noisejauneX"  kd="0.75" ks="0.4" exp="100" kr="0.7" cr="0.75" />
+
+		<material type="noise" noiset="cosY" color="0 0 1" color2="0 0 0"
+			  octaves="6.0" gain="0.6" lacunarity="2" max="0.75" min="0.15"
+			  id="noiseblancY"  kd="0.75" ks="0.4" exp="100" kr="0.7" cr="0.75" />
+
+		<material type="noise" noiset="fbm" color="1 1 0" color2="0 0 0"
+			  octaves="10.0" gain="0.9" lacunarity="6" max="10.5" min="1.5"
+			  id="noisejaune"  kd="0.75" ks="0.4" exp="100" kr="0.7" cr="0.75" />
+
+		<material type="reflective" color="0 0 0" kd="0.75" ks="0.1" kr="0.7" cr="0.75" exp="10000" id="reflective"/>-->
+
+		<material type="transparent" color="0 0 0" kd="0" ks="0" exp="100000000"
+			kr="0.1" cr="1"
+			kt="1" ior="1.05" id="transparent"/>
+
+		<!-- <material type="matte" color="1 1 1" kd="0.75" ks="0.4" exp="100" id="matteblanc"/> -->
+		<!-- <material type="phong" color="0 0 1" kd="0.75" ks="0.4" exp="100" id="bluephong"/> -->
+		<!-- <material type="phong" color="1 0 0" kd="0.75" ks="0.4" exp="100" id="redphong"/> -->
+		<!-- <material type="phong" color="0 1 0" kd="0.75" ks="0.4" exp="100" id="greenphong"/> -->
+	</materials>
+
+	<objects>
+		<object type="plane" coor="-12, 0, 0" normal="1 0 0" id_mat="noisered"/>
+		<object type="plane" coor="12, 0, 0" normal="-1 0 0" id_mat="noisegreen"/>
+		<!-- <object type="plane" coor="0, 10, 0" normal="0 -1 0" id_mat="noiseblanc"/> -->
+		<object type="plane" coor="0, 0, 10" normal="0 0 -1" id_mat="noisejauneX"/>
+		<object type="plane" coor="0, 0, -10" normal="0 0 1" id_mat="noiseblancY"/>
+
+		<!-- <object type="box" coor="3.5 5 -7" rot="0 0 0" -->
+		<!-- 	ax="-12" ay="-12" az="3" bx="-7" by="-6" bz="50" id_mat="noisejauneX"/> -->
+		<object type="sphere" coor="4, -4.5, 5" size="3.8" id_mat="reflective"/>
+		<!-- <object type="sphere" coor="-5 -11 -2" size="3.1" id_mat="transparent"/> -->
+		<!-- <object type="sphere" coor="-50 0 -10" size="10" id_mat="bluephong"/> -->
+		<!-- <object type="sphere" coor="-30 0 0" size="5" id_mat="greenphong"/> -->
+		<!-- <object type="sphere" coor="0 0 0" size="5" id_mat="mattegreen"/> -->
+		<!-- <object type="sphere" coor="-80 0 -10" size="3" id_mat="bluephong"/> -->
+		<!-- <object type="sphere" coor="0 0 15" size="5" id_mat="mattegreen"/> -->
+	</objects>
+	<lights>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="5.5" pos="0 -8 -6"/>
+		<!-- <light type="ambient" color="1.0, 1.0, 1.0" radiance="0.5"/> -->
+ 		<!--<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>-->
+	</lights>
+</scene>

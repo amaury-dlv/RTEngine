@@ -1,0 +1,38 @@
+<!-- Camera -->
+<camera type="pinhole"/>
+<camera type="fisheye"/>
+<camera type="spherical"/>
+<rendering size="800 800" depth="100"/>
+
+<!-- RenderPass -->
+<pass type="light"/>
+<pass type="shadow"/>
+<pass type="transparency"/>
+<pass type="reflection"/>
+<pass type="texture"/>
+<pass type="area light"/>
+<pass type="path tracing" samples="10" />
+
+<!-- Material -->
+<material type="matte"/>
+<material type="phong"/>
+<material type="reflective"/>
+<material type="transparent"/>
+<material type="checker"/>
+<material type="bump"
+bumpt="basic"
+bumpt="waves"
+bumpt="soft_waves"
+bumpt="hard_waves"
+bumpt="lol1"
+bumpt="lol2"/>
+<material type="noise"
+noiset="turbulence"
+noiset="fBm"
+noiset="marble"
+noiset="cosX"
+noiset="cosY"/>
+<object type="mesh"
+file="Meshes/horse97k.ply"
+shape="smooth" size="10"
+id_mat="reflective" />

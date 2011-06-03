@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<rendering size="600 600"/>
+		<camera type="pinhole" eye="-8, 5.5, 40" lookat="1, 4, 0" up="0, -1, 0"
+			dis="2500" zoom="800"/>-->
+	</image>
+
+	<renderpass>
+		<pass type="oversampling" aa="16"/>
+	</renderpass>
+
+	<materials>
+		<material type="transparent" color="0 0 0" kd="1"
+			ks="0.2" kr="0.1" cr="1" exp="2000"
+			kt="0.9" ior="1.0" id="glass_ptr"/>
+		<material type="reflective" color="1 0 0" kd="0.3"
+			ks="0.2" kr="0.25" cr="1"
+			exp="2000" id="reflective_red_sphere"/>
+		<material type="matte" color=".5 .5 .5"
+			kd="1" id="mattegrey"/>
+	</materials>
+
+	<objects>
+		<object type="plane"  coor="0 0 0" normal="0 1 0" id_mat="mattegrey"/>
+		<object type="sphere" coor="4 4 -6"  size="3" id_mat="reflective_red_sphere"/>
+		<object type="sphere" coor="0 4.5 0" size="3" id_mat="glass_ptr"/>
+		<!--
+		-->
+	</objects>
+
+	<lights>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="4.5" pos="40 50 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="4.5" pos="-10 20 10"/>
+		<light type="directional" color="1.0, 1.0, 1.0" radiance="4.5" vec="-1 0 0"/>
+		<!--
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.25"/>
+		-->
+	</lights>
+</scene>

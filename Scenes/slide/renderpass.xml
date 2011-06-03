@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<renderpass>
+          <!--
+		<pass type="area light"/>
+		<pass type="oversampling" aa="4" />
+		<pass type="light"/>
+		<pass type="shadow"/>
+		<pass type="transparency"/>
+		<pass type="reflection"/>
+                <pass type="gamma" e="0.5"/>
+                <pass type="tone mapping" coeff="40"/>
+		<pass type="path tracing" samples="25" />
+	  	<pass type="bump"/>
+	  	<pass type="texture"/>
+              -->
+	</renderpass>
+	<image>
+		<camera type="pinhole" eye="0, -40, 0" lookat="0, 0, 0" up="0, 1, 0"
+			dis="1000" zoom="800"/>-->
+		<camera type="fisheye" eye="-100 -5 0" lookat="0 0 0" up="0, 1, 0"
+			psi="30"/>-->
+		<camera type="spherical" eye="-100, -5, 0" lookat="0 0 0" up="0, 1, 0"
+			lambda="50" psi="30"/>-->
+		<!-- <rendering depth="1000" samplerSharing="0" sampler="400x257"/> -->
+	</image>
+	<materials>
+		<material type="matte" color="0 .5 0" id="mattegreen"  kd="0.75"/>
+		<material type="matte" color=".5 0 0" id="mattered"  kd="0.75"/>
+		<material type="matte" color="1 0 1" id="mattepink"  kd="0.75"/>
+		<material type="matte" color="1 1 1" id="matteblanc"  kd="0.75"/>
+		<material type="matte" color="1 1 1" id="matteblanc2"  kd="0.25"/>
+		<!-- -->
+		<material type="phong" color="0 0 1" kd="0.75" ks="0.4" exp="100" id="bluephong"/>
+		<material type="phong" color="0 1 0" kd="0.75" ks="0.4" exp="100" id="greenphong"/>
+		<material type="emissive" id="emissive" color="1 .73 .4" ls="25"/>
+		<material type="reflective" color="1 1 1" kd="0." ks="1" kr="1" cr="1" exp="1000" id="reflective"/>-->
+		<material type="transparent" color="1 1 1" kd="0.5" ks="1" exp="100"
+			kr="0.5" cr="1"
+			kt="1" ior="1.15" id="transparent"/>
+		<material type="transparent" color="1 1 1" kd="0.5" ks="1" exp="100"
+			kr="0.5" cr="1"
+			kt="1" ior="3" id="transparent2"/>
+		<material type="bump" bumpt="experimental" color="0.26 0.18 0.6"
+			  kd="0.5" ks="0.75" kr="0.5" cr="0.5"
+			  kt="1" ior="1.5"
+			  exp="1000000" id="bumping"/>
+
+		<material type="bump" bumpt="soft_waves" color="0.76 0 0.86"
+			  kd="0.5" ks="0.2" exp="2000" kr="1" cr="1" id="waves" kt="0" ior="1" />
+
+		<material type="bump" bumpt="hard_waves" color="0.76 0 0.86"
+			  kd="0.5" ks="0.6" kr="1" cr="1"
+			  kt="1" ior="1"
+			  exp="1000000" id="spherebump"/>
+		<material type="checker" color="0 .5 0" color2="0 0 0"
+			  id="checkergreen"  kd="0.75" size="2" ks="0.4" exp="100" kr="0.7" cr="0.75" kt=".9" ior="1.05"/>
+	</materials>
+	<objects>
+		<object type="plane" coor="-12, 0, 0" normal="1 0 0" id_mat="mattered"/>
+		<object type="plane" coor="12, 0, 0" normal="-1 0 0" id_mat="mattegreen"/>
+		<object type="plane" coor="0, 10, 0" normal="0 -1 0" id_mat="reflective"/>
+		<object type="plane" coor="0, 0, 10" normal="0 0 -1" id_mat="matteblanc"/>-->
+		<object type="plane" coor="0, 0, -10" normal="0 0 1" id_mat="matteblanc"/>-->
+		<object type="box" coor="0 0 0" ax="-8" ay="-8" az="5" bx="-5" by="-5" bz="10" id_mat="transparent"/>
+		<object type="sphere" coor="0, 0, 5" size="5" id_mat="greenphong"/>
+		<object type="sphere" coor="-10 0 10" size="5" id_mat="bluephong"/>
+		<!--
+		<object type="rectangle" id_mat="emissive"
+			coor="-2 4 -9.99" normal="0 0 1"
+			u="4 0 0" v="0 2 0"/>
+		-->
+	</objects>
+	<lights>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="500" pos="0 -10 -6"/>
+		<!--<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.5"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>-->
+		<!--
+		<light type="environment" color="1.0, 1.0, 1.0" radiance="0.0" id_mat="back" />
+		<light type="ambient"     color="1 1 1" radiance=".15"/>
+		<light type="fake area"       color="1 1 1" radiance="2" pos="15 15 2.5"/>
+		<light type="directional" color="1 1 1" radiance="2" vec="15 15 2.5"/>
+		-->
+	</lights>
+</scene>

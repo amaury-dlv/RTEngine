@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<rendering depth="1" size="600 600"/>
+		<camera type="pinhole" eye="0, -40, 0" lookat="0, 0, 0" up="0, 1, 0"
+			dis="1000" zoom="800"/>-->
+		<camera type="fisheye" eye="-100 -5 0" lookat="0 0 0" up="0, 1, 0"
+			psi="30"/>-->
+		<camera type="spherical" eye="-100, -5, 0" lookat="0 0 0" up="0, 1, 0"
+			lambda="50" psi="30"/>-->
+	</image>
+
+	<renderpass>
+		<!-- <pass type="light"/> -->
+		<pass type="oversampling" aa="4"/>
+	</renderpass>
+
+	<materials>
+		<material type="matte" color="0.035 .57 0.02" id="mattegreen"  kd="0.75"/>
+		<material type="matte" color=".57 0.025 0.025" id="mattered"  kd="0.75"/>
+		<material type="matte" color="1 1 1" id="matteblanc"  kd="0.75"/>
+
+		<!-- -->
+
+		<material type="phong" color=".57 .02 .02" kd="0.75" ks="0.4" exp="100" id="redphong"/>
+		<material type="phong" color="0.75 0.75 0.75" kd="0.85" ks="0.9" exp="100" id="cubephong"/>
+		<material type="phong" color="0 .57 0" kd="1.75" ks="1.4" exp="100" id="greenphong"/>
+	</materials>
+
+	<objects>
+		<object type="cube troue" coor="0 0 0" rot="20 50 50" hole="14.8" id_mat="cubephong"/>
+
+		<object type="cube troue" coor="5 5 5" hole="11.8" id_mat="redphong"/>
+		<object type="cube troue" coor="-5 0 -5" rot="40 0 20" hole="8.8" id_mat="greenphong"/>
+		<object type="cube troue" coor="5 0 -5" rot="20 0 50" hole="5.8" id_mat="cubephong"/>
+		<object type="cube troue" coor="-5, 5. 5" rot="35 0 35" size="2" rad="0" hole="0.4" id_mat="matteblanc"/>
+
+		<object type="plane" coor="-12, 0, 0" normal="1 0 0" id_mat="mattered"/>
+		<object type="plane" coor="12, 0, 0" normal="-1 0 0" id_mat="mattegreen"/>
+		<object type="plane" coor="0, 10, 0" normal="0 -1 0" id_mat="matteblanc"/>
+		<object type="plane" coor="0, 0, 10" normal="0 0 -1" id_mat="matteblanc"/>
+		<object type="plane" coor="0, 0, -10" normal="0 0 1" id_mat="matteblanc"/>
+	</objects>
+
+	<lights>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="2.0" pos="-10 -10 5"/>
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.5"/>
+	</lights>
+</scene>

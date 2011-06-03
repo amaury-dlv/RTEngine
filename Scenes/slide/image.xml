@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+
+	<image>
+		<camera type="pinhole" eye="0, 25, 100" lookat="0, 0, 0" up="0, -1, 0"
+			dis="9000" zoom="800"/>-->
+	</image>
+
+	<renderpass>
+		<pass type="light"/>
+		<pass type="shadow"/>
+		<pass type="texture"/>
+	</renderpass>
+
+
+	<materials>
+		<material type="matte" color="1 .8 1"   ka="0"    kd="0.75" id="matte"/>
+
+		<material type="image" obj_type="sphere" color="1 1 1"
+			  file="BilliardBall.ppm"
+			  kd="1" ks="0.5" kr="1" cr="1" exp="800"
+			  scale="1.0"
+			  id = "image1"/>
+
+		<material type="image" obj_type="sphere" color="1 1 0"
+			  file="EarthMap.ppm"
+			  kd="1" ks="0.5" kr="1" cr="1" exp="1000000"
+			  scale="1"
+			  id = "image2"/>
+
+		<material type="image" obj_type="sphere" color="1 1 1"
+			  file="EarthWithClouds.ppm"
+			  kd="1" ks="0.5" kr="1" cr="1" exp="10000000"
+			  scale="1"
+			  id = "image3"/>
+
+		<material type="image" obj_type="sphere" color="1 1 1"
+			  file="SphereGrid.ppm"
+			  kd="1" ks="0.5" kr="1" cr="1" exp="10000000"
+			  scale="1"
+			  id = "image4"/>
+	</materials>
+
+	<objects>
+		<object type="sphere" coor="-3.3 0 0" size="1.0" id_mat="image1" rot="190 0 40"/>
+		<object type="sphere" coor="-1.1 0 0" size="1.0" id_mat="image2" rot="0 180 0"/>
+		<object type="sphere" coor="1.1  0 0" size="1.0" id_mat="image3" />
+		<object type="sphere" coor="3.3  0 0" size="1.0" id_mat="image4" rot="180 0 0"/>
+		<object type="plane"  coor="0 -1 0" normal="0 1 0" id_mat="matte"/>
+	</objects>
+
+	<lights>
+		<light type="directional" color="1 1 1" radiance="3" vec="200 250 300"/>
+	</lights>
+
+</scene>

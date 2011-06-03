@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+
+	<image>
+		<!-- <rendering size="600 600" depth="1000" samplerSharing="0" sampler="400x257"/> -->
+		<!-- <rendering size="600 600" depth="1000" samplerSharing="0" sampler="400x1777" /> -->
+		<!-- <rendering size="600 600" depth="5" sampler="900x1777" samplerSharing="0" /> -->
+		<rendering size="600 600"/>
+		<camera type="pinhole" eye="27.6 27.4 -80" lookat="27.6 27.4 0" up="0, -1, 0" dis="880"/>
+	</image>
+
+	<renderpass>
+		<!-- <pass type="light"/> -->
+		<!-- <pass type="shadow"/> -->
+		<!-- <pass type="transparency"/> -->
+		<!-- <pass type="reflection"/> -->
+	  	<!-- <pass type="bump"/> -->
+	  	<!-- <pass type="texture"/> -->
+		<!-- <pass type="area light" samples="4"/> -->
+		<!-- <pass type="area light"/> -->
+		<!-- <pass type="oversampling" aa="4" /> -->
+                <!-- <pass type="gamma" e="0.5"/> -->
+                <!-- <pass type="tone mapping" coeff="40"/> -->
+		<!-- <pass type="path tracing" samples="25" /> -->
+	</renderpass>
+
+	<materials>
+		<material type="matte" id="cornellBlue" kd="0.6" color=".27 .51 0.705"/>
+		<material type="matte" id="cornellYellow" kd="0.6" color=".933 .933 0.025"/>
+		<material type="matte" id="cornellWhite" kd="0.6" color="1 1 1"/>
+
+		<material type="phong" id="cornellRedSpehre" kd="0.8" color=".85 .85 .85" ks="0.7" exp="30"/>
+		<!-- <material type="phong" color="1 1 0" id="skyBlue"  kd="0.76" ks="0.12" exp="20"/> -->
+
+		<!-- cornellBox emissive -->
+		<material type="emissive" id="emissive" color="1 .73 .4" ls="100"/>
+		<material type="emissive" color="1 1 1" id="back" ls="0.1"/>
+	</materials>
+
+	<objects>
+		<object type="sphere" coor="25.3 8 28.7" size="9" id_mat="cornellRedSpehre"/>
+
+		<object type="rectangle" id_mat="emissive"
+			coor="-2 4 -9.99" normal="0 0 1"
+			u="4 0 0" v="0 2 0"/>
+
+		<!-- ceiling light -->
+		<object type="rectangle" id_mat="emissive"
+			coor="21.3 54.879 22.7" normal="0 -1 0"
+			u="0 0 10.5" v="13 0 0"/>
+
+		<!-- right wall -->
+		<object type="rectangle" id_mat="cornellBlue"
+			coor="0 0 0" normal="1 0 0"
+			u="0 0 55.92" v="0 54.88 0"/>
+		<!-- right wall -->
+		<object type="rectangle" id_mat="cornellYellow"
+			coor="55.28 0 0" normal="-1 0 0"
+			u="0 0 55.92" v="0 54.88 0"/>
+		<!-- back wall -->
+		<object type="rectangle" id_mat="cornellWhite"
+			coor="0 0 55.92" normal="0 0 -1"
+			u="55.28 0 0" v="0 54.88 0"/>
+		<!-- floor -->
+		<object type="rectangle" id_mat="cornellWhite"
+			coor="0 0 0" normal="0 1 0"
+			u="0 0 55.92" v="55.28 0 0"/>
+		<!-- ceiling -->
+		<object type="rectangle" id_mat="cornellWhite"
+			coor="0 54.88 0" normal="0 -1 0"
+			u="0 0 55.92" v="55.28 0 0"/>
+
+		<!-- short box -->
+		<!-- top -->
+		<!-- <object type="rectangle" id_mat="cornellWhite" -->
+		<!-- 	coor="13 16.5 6.5" normal="0 1 0" -->
+		<!-- 	u="-4.8 0 16" v="16 0 4.9"/> -->
+		<!-- <object type="rectangle" id_mat="cornellWhite" -->
+		<!-- 	coor="13 0 6.5" normal="" -->
+		<!-- 	u="-4.8 0 16" v="0 16.5 0"/> -->
+		<!-- <object type="rectangle" id_mat="cornellWhite" -->
+		<!-- 	coor="8.2 0 22.5" normal="" -->
+		<!-- 	u="15.8 0 4.7" v="0 16.5 0"/> -->
+		<!-- <object type="rectangle" id_mat="cornellWhite" -->
+		<!-- 	coor="24.2 0 27.4" normal="" -->
+		<!-- 	u="4.8 0 -16.0" v="0 16.5 0"/> -->
+		<!-- <object type="rectangle" id_mat="cornellWhite" -->
+		<!-- 	coor="29 0 11.4" normal="" -->
+		<!-- 	u="-16 0 -4.9" v="0 16.5 0"/> -->
+
+		<!-- tall box -->
+		<!-- top -->
+		<!-- <object type="rectangle" id_mat="cornellWhite" -->
+		<!-- 	coor="42.3 33 24.7" normal="0 1 0" -->
+		<!-- 	u="-15.8 0 4.9" v="4.9 0 15.9"/> -->
+		<!-- <object type="rectangle" id_mat="cornellWhite" -->
+		<!-- 	coor="42.3 0 24.7" normal="" -->
+		<!-- 	u="-15.8 0 4.9" v="0 33 0"/> -->
+		<!-- <object type="rectangle" id_mat="cornellWhite" -->
+		<!-- 	coor="26.5 0 29.6" normal="" -->
+		<!-- 	u="4.9 0 15.9" v="0 33 0"/> -->
+		<!-- <object type="rectangle" id_mat="cornellWhite" -->
+		<!-- 	coor="31.4 0 45.5" normal="" -->
+		<!-- 	u="15.8 0 -4.9" v="0 33 0"/> -->
+		<!-- <object type="rectangle" id_mat="cornellWhite" -->
+		<!-- 	coor="47.2 0 40.6" normal="" -->
+		<!-- 	u="-4.9 0 -15.9" v="0 33 0"/> -->
+	</objects>
+
+	<lights>
+		<!-- cornell EnvLight -->
+		<!-- <light type="environment" color="1.0, 1.0, 1.0" radiance="1" id_mat="back" /> -->
+
+		<light type="point" color="1 1 1" radiance="0.75" pos="12.8 32.879 25.7"/>
+		<light type="point" color="1 1 1" radiance="0.75" pos="27.6 28.879 20.7"/>
+		<light type="point" color="1 1 1" radiance="0.74" pos="27.6 27.4 30.7"/>
+
+		<light type="point" color="1.0 1.0 1.0" radiance="0.55" pos="16.3 5.4 -10"/>
+
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.4"/>
+
+		<!-- <light type="ambient" color="1.0, 1.0, 1.0" radiance="0.5"/> -->
+		<!-- <light type="ambient"     color="1 1 1" radiance=".15"/> -->
+		<!-- <light type="fake area"       color="1 1 1" radiance="2" pos="21.3 51.879 22.7"/> -->
+		<!-- <light type="directional" color="1 1 1" radiance="2" vec="15 15 2.5"/> -->
+	</lights>
+
+</scene>

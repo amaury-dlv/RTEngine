@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+
+	<image>
+		<rendering size="1600 1600"/>
+		<camera type="pinhole" eye="0, 0, 10000" lookat="0, 0, 0" up="0, -1, 0" dis="50000" />
+	</image>
+
+	<renderpass>
+		<pass type="light"/>
+	</renderpass>
+
+	<materials>
+		<material type="matte" color="1 1 0"		id="yellow"  kd="0.75" ka="0.25"/>
+		<material type="matte" color="0.71 0.40 0.16"	id="brown"  kd="0.75" ka="0.25"/>
+		<material type="matte" color="0.0 0.41 0.41"	id="darkGreen"  kd="0.75" ka="0.25"/>
+		<material type="matte" color="1 0.75 0"		id="orange"  kd="0.75" ka="0.25"/>
+		<material type="matte" color="0 0.6 0.3"	id="green"  kd="0.75" ka="0.25"/>
+		<material type="matte" color="0.65 1 0.30"	id="lightGreen"  kd="0.75" ka="0.25"/>
+		<material type="matte" color="0.61 0.61 0"	id="darkYellow"  kd="0.75" ka="0.25"/>
+		<material type="matte" color="0.65 0.3 1"	id="lightPurple"  kd="0.75" ka="0.25"/>
+		<material type="matte" color="0.5 0 1"		id="darkPurple"  kd="0.75" ka="0.25"/>
+		<!-- <material type="matte" color="0.25 0.25 0.25"	id="grey"  kd="0.75" ka="0.25"/> -->
+		<material type="phong" color="0 0 1" kd="0.75" ks="0.4" exp="100" id="bluephong"/>
+	</materials>
+
+	<objects>
+		<!-- <object type="plane" coor="0, 0, -150" normal="0 0 1" id_mat="grey"/> -->
+
+		<!-- 00 -->
+		<object type="sphere" coor="5 3 0" size="30" id_mat="yellow"/>
+		<object type="sphere" coor="45 -7 -60" size="20" id_mat="brown"/>
+		<object type="sphere" coor="40 43 -100" size="17" id_mat="darkGreen"/>
+		<object type="sphere" coor="-20 28 -15" size="20" id_mat="orange"/>
+		<object type="sphere" coor="-25 -7 -35" size="27" id_mat="green"/>
+		<object type="sphere" coor="20 -27 -35" size="25" id_mat="lightGreen"/>
+		<object type="sphere" coor="35 18 -35" size="22" id_mat="green"/>
+		<object type="sphere" coor="-57 -17 -50" size="15" id_mat="brown"/>
+		<object type="sphere" coor="-47 16 -80" size="23" id_mat="lightGreen"/>
+		<object type="sphere" coor="-15 -32 -60" size="22" id_mat="darkGreen"/>
+
+		<!-- 10 -->
+		<object type="sphere" coor="-35 -37 -80" size="22" id_mat="darkYellow"/>
+		<object type="sphere" coor="10 43 -80" size="22" id_mat="darkYellow"/>
+		<object type="sphere" coor="30 -7 -80" size="10" id_mat="darkYellow"/>
+		<object type="sphere" coor="-40 48 -110" size="18" id_mat="darkGreen"/>
+		<object type="sphere" coor="-10 53 -120" size="18" id_mat="brown"/>
+		<object type="sphere" coor="-55 -52 -100" size="10" id_mat="lightPurple"/>
+		<object type="sphere" coor="5 -52 -100" size="15" id_mat="brown"/>
+		<object type="sphere" coor="-20 -57 -120" size="15" id_mat="darkPurple"/>
+		<object type="sphere" coor="55 -27 -100" size="17" id_mat="darkGreen"/>
+		<object type="sphere" coor="50 -47 -120" size="15" id_mat="brown"/>
+
+		<!-- 20 -->
+		<object type="sphere" coor="70 -42 -150" size="10" id_mat="lightPurple"/>
+		<object type="sphere" coor="5 73 -130" size="12" id_mat="lightPurple"/>
+		<object type="sphere" coor="66 21 -130" size="13" id_mat="darkPurple"/>
+		<object type="sphere" coor="72 -12 -140" size="12" id_mat="lightPurple"/>
+		<object type="sphere" coor="64 5 -160" size="11" id_mat="green"/>
+		<object type="sphere" coor="55 38 -160" size="12" id_mat="lightPurple"/>
+		<object type="sphere" coor="-73 -2 -160" size="12" id_mat="lightPurple"/>
+		<object type="sphere" coor="30 -62 -140" size="15" id_mat="darkPurple"/>
+		<object type="sphere" coor="25 63 -140" size="15" id_mat="darkPurple"/>
+
+		<!-- 30 -->
+		<object type="sphere" coor="-60 46 -140" size="15" id_mat="darkPurple"/>
+		<object type="sphere" coor="-30 68 -130" size="12" id_mat="lightPurple"/>
+		<object type="sphere" coor="58 56 -180" size="11" id_mat="green"/>
+		<object type="sphere" coor="-63 -39 -180" size="11" id_mat="green"/>
+		<object type="sphere" coor="46 68 -200" size="10" id_mat="lightPurple"/>
+		<object type="sphere" coor="-3 -72 -130" size="12" id_mat="lightPurple"/>
+	</objects>
+
+	<lights>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="3.0" pos="100 100 200"/>
+		<!-- <light type="directional" color="1.0, 1.0, 1.0" radiance="1.3" vec="100 100 200"/> -->
+		<!-- <light type="ambient" color="1.0, 1.0, 1.0" radiance=".5"/> -->
+	</lights>
+
+</scene>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<camera type="pinhole" eye="-30, 8, 30" lookat="0, 5, 0" up="0, -1, 0"
+			dis="1400" zoom="800"/>-->
+		<camera type="fisheye" eye="-100 -5 0" lookat="0 0 0" up="0, 1, 0"
+			psi="30"/>-->
+		<camera type="spherical" eye="-100, -5, 0" lookat="0 0 0" up="0, 1, 0"
+			lambda="50" psi="30"/>-->
+	<rendering size="400 400" />
+	</image>
+	<renderpass>
+		<pass type="light"/>
+		<!--
+		<pass type="ambient occlusion" samples="100" />
+		<pass type="ssao" samples="16" blurKernelSize="16" strength="5" rad="3" totStrength="0.2" falloff="0"/>
+		-->
+	</renderpass>
+	<materials>
+		<material type="matte" color="0 .5 0" id="mattegreen"  kd="0.75"/>
+		<material type="matte" color=".5 0 0" id="mattered"  kd="0.75"/>
+		<material type="matte" color="1 0 1" id="mattepink"  kd="0.75"/>
+		<material type="matte" color="1 1 1" id="matteblanc"  kd="0.75"/>
+		<material type="matte" color="1 1 1" id="matteblanc2"  kd="0.25"/>
+		<!-- -->
+		<material type="phong" color="0 0 1" kd="0.75" ks="0.4" exp="100" id="bluephong"/>
+		<material type="phong" color="0.5 0.5 0.5" kd="0.75" ks="0.001" exp="25" id="silverphong"/>
+		<material type="phong" color="0.7 0.5 0.2" kd="0.75" ks="0.001" exp="25" id="sphong"/>
+		<material type="phong" color="0 1 0" kd="0.75" ks="0.4" exp="100" id="greenphong"/>
+		<material type="reflective" color="0 0 0" kd="0." ks="0" kr="1" cr="1" exp="1000000" id="reflective"/>-->
+		<material type="reflective" color="1 1 1" kd="0." ks="0" exp="10000000000" kr="1" cr="1" id="bluereflective"/>
+		<material type="transparent" color="0 0 0" kd="0." ks="0" exp="10000000000"
+			kr="1" cr="1"
+			kt="1.0" ior="1.05" id="transparent"/>
+	</materials>
+	<objects>
+		<object type="mesh" id_mat="matteblanc"
+			shape="smooth"
+			size="10"
+			file="Meshes/dragon.ply"/>
+	</objects>
+	<lights>
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="1"/>
+	</lights>
+</scene>

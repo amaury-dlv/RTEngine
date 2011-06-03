@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<rendering size="600 600" depth="5" samplerSharing="0" sampler="100x100" />
+		<camera type="pinhole" eye="0, -40, 0" lookat="0, 0, 0" up="0, 1, 0"
+			dis="1000" zoom="800"/>-->
+		<camera type="fisheye" eye="-100 -5 0" lookat="0 0 0" up="0, 1, 0"
+			psi="30"/>-->
+		<camera type="spherical" eye="-100, -5, 0" lookat="0 0 0" up="0, 1, 0"
+			lambda="50" psi="30"/>-->
+	</image>
+
+	<renderpass>
+	  <pass type="light"/>
+	  <pass type="bump"/>
+	  <pass type="transparency"/>
+	  <pass type="reflection"/>
+	</renderpass>
+
+	<materials>
+		<material type="bump" bumpt="basic" color="0.26 0.18 0.6"
+			  kd="0.5" ks="0.75" kr="0.5" cr="0.5"
+			  kt="1" ior="1.5"
+			  exp="10000" id="bumping"/>
+
+		<material type="phong" bumpt="soft_waves" color="0.76 0 0.86"
+			  kd="0.5" ks="0.2" exp="2000" kr="1" cr="1" id="waves"/>
+
+		<material type="bump" bumpt="hard_waves=" color="0.76 0 0.86"
+			  kd="0.5" ks="0.6" kr="1" cr="1"
+			  kt="1" ior="1"
+			  exp="1000000" id="spherebump"/>
+
+		<material type="phong" color="0.2 0.2 0.98" kd="0.75" ks="0.4" exp="100" id="bluephong"/>
+		<material type="phong" color=".87 0 0" kd="0.75" ks="0" exp="100" id="redphong"/>
+		<material type="phong" color="0 .87 0" kd="0.75" ks="0" exp="100" id="greenphong"/>
+	</materials>
+
+	<objects>
+		<!-- <object type="plane" coor="-12, 0, 0" normal="1 0 0" id_mat="bumping"/> -->
+		<!-- <object type="plane" coor="12, 0, 0" normal="-1 0 0" id_mat="bumping"/> -->
+		<!-- <object type="plane" coor="0, 10, 0" normal="0 -1 0" id_mat="bumping"/> -->
+
+		<object type="plane" coor="0, 0, 10" normal="0 0 -1" id_mat="bumping"/>-->
+		<object type="sphere" coor="200 1000 -200" size="100" id_mat="redphong"/>
+		<object type="sphere" coor="-10 1000 -100" size="100" id_mat="greenphong"/>
+	</objects>
+
+	<lights>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="2.5" pos="0 -10 -6"/>
+		<light type="directional" color="1.0, 1.0, 1.0" radiance="2." vec="0 -10 -6"/>
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.05"/>
+	</lights>
+</scene>

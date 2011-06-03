@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+
+	<image>
+		<rendering size="600 600"/>
+		<!-- <rendering size="600 600" depth="5" sampler="900x1777" samplerSharing="0" /> -->
+		<camera type="pinhole" eye="-5 5.5 35" lookat="0.25 3.5 0" up="0, -1, 0"
+			dis="2400"/>
+	</image>
+
+	<renderpass>
+		<!-- <pass type="path tracing" samples="3600"/> -->
+		<pass type="oversampling" aa="100"/>
+		<!-- <pass type="light"/> -->
+		<!-- <pass type="reflection"/> -->
+		<!-- <pass type="transparency"/> -->
+		<!-- <pass type="texture"/> -->
+		<!-- <pass type="shadow"/> -->
+	</renderpass>
+
+	<materials>
+		<material type="transparent" color="1 1 1" id="transparent bunny"
+			  kd="0.0" ks="0.2" exp="2000" ior="1.5" kr="0,1" kt="0.9" cr="1"/>
+		<material type="reflective" color="1 0 0" id="red sphere"
+			  ka="0.0" kd="0.3" ks="0.2" exp="2000" kr="0.25" cr="1"/>
+		<material type="matte" color=".65 .65 .65" id="rectangle" ka="0.4" kd="0.35"/>
+		<material type="checker" color="1 1 1" color2="0.75 0.75 0.75" size="4"
+			  id="checkergrey" kd="0.35" ks="0" exp="100" kr="0" cr="0" kt="0" ior="1"/>
+		<!-- <material type="matte" color=".75 .75 .75" id="ground plane" ka="0.4" kd="0.6"/> -->
+		<!-- <material type="emissive" color="1 1 0.5" id="environment light" ls="0.85"/> -->
+	</materials>
+
+	<objects>
+		<object type="mesh" id_mat="transparent bunny"
+			shape="smooth"
+			size="5"
+			file="Meshes/bunny10k.ply"/>
+		<object type="sphere" coor="2 4 -6" size="3" id_mat="red sphere"/>
+		<object type="rectangle" coor="-20 0.90 -100" u="0 0 120" v="40 0 0" normal="0 1 0" id_mat="checkergrey"/>
+		<!-- <object type="plane" coor="-20 0.95 -100" normal="0 1 0" id_mat="checkergrey"/> -->
+	</objects>
+
+	<lights>
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.25"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="4" pos="40 50 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="4" pos="-10 20 10"/>
+		<light type="directional" color="1.0, 1.0, 1.0" radiance="4" vec="-1 0 0"/>
+		<!-- <light type="environment" color="1.0, 1.0, 1.0" radiance="0.85" id_mat="environment light" /> -->
+	</lights>
+
+</scene>

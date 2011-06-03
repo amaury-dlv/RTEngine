@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<rendering size="800 600"/>
+		<camera type="pinhole" eye="-9 7 81" lookat="-.209 .11 0" up="0 -1 0" dis="37500"/>
+	</image>
+
+	<renderpass>
+		<pass type="light"/>
+		<pass type="shadow"/>
+		<pass type="reflection"/>
+		<pass type="ambient occlusion" samples="16"/>
+		<!--
+		<pass type="oversampling" aa="1"/>
+		-->
+	</renderpass>
+
+	<materials>
+		<material type="phong" id="ph" color="1 .6 0" kd=".95" ks=".5" exp="20"/>
+		<material type="reflective" id="refl" color=".5 .5 .8" kd=".5" ks="0" exp="20" kr=".5" cr="1"/>
+	</materials>
+
+	<objects>
+		<object type="mesh" id_mat="ph" file="Meshes/dragon2.ply" shape="flat" size="1"/>
+		<object type="plane" id_mat="refl" coor="0 -.085 0" normal="0 1 0"/>
+	</objects>
+
+	<lights>
+		<light type="ambient" color="1 1 1" radiance="1"/>
+		<light type="directional" color="1 1 1" vec=".5 1 .75" radiance="1"/>
+	</lights>
+</scene>

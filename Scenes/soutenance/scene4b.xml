@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<rendering size="1280 720"/>
+		<camera type="pinhole" eye="0, -5, -50" lookat="0, 0, 0" up="0, 1, 0" dis="980"/>
+	</image>
+	<renderpass>
+		<!-- <pass type="oversampling" aa="4"/> -->
+		<pass type="light"/>
+		<!-- <pass type="bump"/> -->
+		<!-- <pass type="shadow"/> -->
+		<!-- <pass type="transparency"/> -->
+		<pass type="reflection"/>
+		<pass type="ambient occlusion" samples="4"/>
+		<!-- <pass type="texture"/> -->
+		<!-- <pass type="area light"/> -->
+		<!-- <pass type="path tracing" samples="10" /> -->
+	</renderpass>
+	<materials>
+	        <material type="phong" id="phong1" color="1.0, 1.0, 1.0" kd="0.4" ks="0.65" exp="1000"/>
+		<material type="matte" id="matte"  color="0.75, 0.75, 0.75" kd="0.75" ks="1"/>
+		<material type="phong" id="phong2" color="1.0, 1.0, 1.0" kd="0.85" ks="0.74" exp="20"/>
+		<material type="reflective" id="reflective" color="1.0, 1.0, 1.0" kd="0.0" ks="1" exp="100" kr="1" cr="1"/>
+	</materials>
+	<objects>
+	        <object type="plane" coor="0.0, 10.0, 0.0" normal="0.0, -1.0, 0.0" id_mat="phong2"/>
+		<object type="cone" size="1" y1="0" y2="10" alpha="0.6" id_mat="matte"/>
+		<object type="cone" size="1" y1="0" y2="10" alpha="0.7" rot="180 0 20" id_mat="reflective"/>
+	</objects>
+	<lights>
+	        <light type="point" pos="-10.0, 0.0, -12.0" color="1.0, 1.0, 1.0" radiance="1.5"/>
+		<light type="point" pos="10.0, 0.0, 6.0" color="0.6, 0.7, 1.0" radiance="1.2"/>
+		<light type="point" pos="-10.0, -5.0, 0.0" color="0.6, 0.7, 1.0" radiance="1.2"/>
+	</lights>
+</scene>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+
+	<image>
+		<rendering size="600 400" depth="10"/>
+		<camera type="pinhole" eye="75 40 100" lookat="-10 39 0" up="0, -1, 0"
+			dis="360"/>
+	</image>
+
+	<renderpass>
+		<pass type="light"/> -->
+		<pass type="shadow"/> -->
+		<pass type="reflection"/> -->
+		<pass type="texture"/> -->
+		<!--
+		     <pass type="negative"/>-->
+		<!--
+		     <pass type="gamma" e="3"/>-->
+		<!--
+		     <pass type="tone mapping" coeff="5"/>-->
+	</renderpass>
+
+	<materials>
+		<material type="reflective" color="0.75 0.75 0" id="yellow-green reflective sphere"
+			  ka="0.25" kd="0.5" ks="0.15" exp="100" kr="0.75" cr="1"/>
+		<material type="matte" color="0.75 0.25 0" id="orange non-reflective sphere" ka="0.45" kd="0.75"/>
+		<material type="reflective" color="0 0 0" id="sphere on top of box"
+			  ka="0.35" kd="0.75" ks="0.0" exp="1.0" kr="0.75" cr="1"/>
+		<material type="reflective" color="0 0.5 0.75" id="cylinder"
+			  ka="0.35" kd="0.5" ks="0.2" exp="100" kr="0.75" cr="1"/>
+		<material type="matte" color="0.75 1.0 0.75" id="box" ka="0.15" kd="0.5"/>
+		<material type="checker" color="0.75 0.75 0.75" color2="0 0 0" size="20" id="ground plane"
+			  ka="0.3" kd="0.9" ks="0" exp="100" kr="0" cr="1" kt="1" ior="1"/>
+	</materials>
+
+	<objects>
+		<object type="sphere" coor="38 23 -25" size="23" id_mat="yellow-green reflective sphere"/>
+		<object type="sphere" coor="-7 10 42" size="20" id_mat="orange non-reflective sphere"/>
+		<object type="sphere" coor="-30 59 35" size="20" id_mat="sphere on top of box"/>
+		<object type="cylinder" coor="0 0 0" size="22" y1="85" y2="0" id_mat="cylinder"/>
+		<object type="box" ax="-35" ay="0" az="-110" bx="-25" by="60" bz="65" id_mat="box"/>
+		<object type="plane" normal="0 1 0" id_mat="ground plane"/>
+	</objects>
+
+	<lights>
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance=".5"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="3" pos="150 150 0"/>
+	</lights>
+
+</scene>

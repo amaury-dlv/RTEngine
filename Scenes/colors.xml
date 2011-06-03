@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<camera type="pinhole" eye="-30, 8, 30" lookat="0, 0.1, 0" up="0, -1, 0"
+			dis="1000" zoom="800"/>-->
+		<camera type="fisheye" eye="-100 -5 0" lookat="0 0 0" up="0, 1, 0"
+			psi="30"/>-->
+		<camera type="spherical" eye="-100, -5, 0" lookat="0 0 0" up="0, 1, 0"
+			lambda="50" psi="30"/>-->
+	</image>
+	<renderpass>
+		<pass type="light"/>
+		<pass type="shadow"/>
+		<pass type="transparency"/>
+		<pass type="reflection"/>
+	</renderpass>
+	<materials>
+		<material type="matte" color="0 .5 0" id="mattegreen"  kd="0.75"/>
+		<material type="matte" color=".5 0 0" id="mattered"  kd="0.75"/>
+		<material type="matte" color="1 0 1" id="mattepink"  kd="0.75"/>
+		<material type="matte" color="1 1 1" id="matteblanc"  kd="0.75"/>
+		<material type="matte" color="1 1 1" id="matteblanc2"  kd="0.25"/>
+		<!-- -->
+		<material type="phong" color="0 0 1" kd="0.75" ks="0.4" exp="100" id="bluephong"/>
+		<material type="phong" color="0.5 0.5 0.5" kd="0.75" ks="0.001" exp="25" id="silverphong"/>
+		<material type="phong" color="0.7 0.5 0.2" kd="0.75" ks="0.001" exp="25" id="sphong"/>
+		<material type="phong" color="0 1 0" kd="0.75" ks="0.4" exp="100" id="greenphong"/>
+		<material type="reflective" color="0 0 0" kd="0." ks="0" kr="1" cr="1" exp="1000000" id="reflective"/>-->
+		<material type="reflective" color="1 1 1" kd="0." ks="0" exp="10000000000" kr="1" cr="1" id="bluereflective"/>
+		<material type="transparent" color="0 0 0" kd="0." ks="0" exp="10000000000"
+			kr="1" cr="1"
+			kt="1.0" ior="1.05" id="transparent"/>
+	</materials>
+	<objects>
+          <!--
+		<object type="plane" coor="-12, 0, 0" normal="1 0 0" id_mat="mattered"/>
+		<object type="plane" coor="12, 0, 0" normal="-1 0 0" id_mat="mattegreen"/>
+                <object type="plane" coor="0, 10, 0" normal="0 -1 0" id_mat="matteblanc"/>-->
+		<object type="sphere" coor="-30 8 30" size="55" id_mat="matteblanc2"/>
+		<object type="plane" coor="0, -8, 0" normal="0 1 0" id_mat="matteblanc"/>
+		<object type="plane" coor="0, 20, 0" normal="0 1 0" id_mat="matteblanc"/>
+		<object type="mesh" id_mat="reflective"
+			shape="smooth"
+			size="10"
+			file="Meshes/horse97k.ply"/>
+                      <!--
+		<object type="box" coor="10 0 0" ax="-8" ay="-8" az="5" bx="-5" by="-5" bz="10" id_mat="matteblanc"/>
+		<object type="sphere" coor="0 0 0" size="5" id_mat="mattepink"/>
+		<object type="plane" coor="0, 0, -60" normal="0 0 1" id_mat="bluephong"/>
+		<object type="sphere" coor="-50 0 -10" size="10" id_mat="bluephong"/>
+		<object type="sphere" coor="0, 0, 5" size="50" id_mat="matteblanc"/>
+		<object type="sphere" coor="0 0 0" size="1" id_mat="bluereflective"/>
+		<object type="sphere" coor="-30 0 0" size="5" id_mat="greenphong"/>
+		<object type="sphere" coor="0 0 0" size="5" id_mat="mattegreen"/>
+		<object type="sphere" coor="-80 0 -10" size="3" id_mat="bluephong"/>
+		<object type="sphere" coor="0 0 15" size="5" id_mat="mattegreen"/>-->
+	</objects>
+	<lights>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="100" pos="-3 6 8"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="100" pos="-3 -6 8"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="100" pos="-40 10 40"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="100" pos="-20 5 20"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="100" pos="-10 2 10"/>
+		<light type="point" color=".0, 1.0, 1.0" radiance="100" pos="10 10 10"/>
+		<light type="point" color="1.0, .0, 1.0" radiance="100" pos="-10 10 -10"/>
+                <!--
+		<light type="point" color="1.0, 1.0, 1.0" radiance="25" pos="0 0 0"/>
+		<light type="point" color=".0, .0, 1.0" radiance="50" pos="-25 30 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="500" pos="0 -10 -6"/>
+		<light type="point" color="1.0, 1.0, .0" radiance="50" pos="10 35 0"/>
+		<light type="point" color="1.0, .0, 1.0" radiance="50" pos="0 40 0"/>
+		<light type="point" color=".0, 1.0, 1.0" radiance="50" pos="-10 35 0"/>
+		<light type="point" color="1.0, .0, .0" radiance="50" pos="25 30 0"/>
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.5"/>
+		<light type="directional" color="1 1 1" radiance="50" vec="-1 -1 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>-->
+	</lights>
+</scene>

@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<rendering size="600 600" />
+		<!-- <rendering size="600 600"/> -->
+		<camera type="pinhole" eye="500, 195, 125" lookat="300 195, -40" up="0, -1, 0" dis="300"/>
+	</image>
+
+	<renderpass>
+		<pass type="path tracing" samples="400"/>
+	</renderpass>
+
+	<materials>
+		<material type="emissive" color="1 1 1" id="back" ls="1.4"/>
+		<material type="matte" color="0 .5 .5" kd="0.5" ks="0.0" exp="100"
+			  id="cyan"/>
+
+		<material type="matte" color=".8 .5 0" kd="0.5" ks="0.0" exp="100"
+			  id="green"/>
+
+		<material type="matte" color=".5 .6 0" kd="0.5" ks="0.0" exp="100"
+			  id="orange"/>
+
+
+		<material type="matte" color=".85 .85 .85" kd="0.5" ks="0.0" exp="100"
+			  id="grey"/>
+
+		<material type="checker" color="1 1 1"
+			  color2=".75 .75 .75" size="50"
+			  kd="0.75" ks="1" exp="10000"
+			  kr="0" cr="0.75" kt=".9" ior="1.05"
+			  id="checker_grey"/>
+
+		<material type="emissive" color="1 1 1" id="environment light" ls="1.85"/>
+	</materials>
+
+	<objects>
+		<object type="plane" coor="0 1 0" normal="0 1 0" id_mat="grey"/>
+
+		<object type="box" ax="-50.000000" ay="0.000000" az="-50.000000" bx="0.000000"   by="300.000000" bz="0.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-200.000000" bx="0.000000"  by="300.000000" bz="-150.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-350.000000" bx="0.000000"  by="300.000000" bz="-300.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-500.000000" bx="0.000000"  by="300.000000" bz="-450.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-650.000000" bx="0.000000"  by="300.000000" bz="-600.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-800.000000" bx="0.000000"  by="300.000000" bz="-750.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-950.000000" bx="0.000000"  by="300.000000" bz="-900.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-1100.000000" bx="0.000000" by="300.000000" bz="-1050.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-1250.000000" bx="0.000000" by="300.000000" bz="-1200.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-1400.000000" bx="0.000000" by="300.000000" bz="-1350.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-1550.000000" bx="0.000000" by="300.000000" bz="-1500.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-1700.000000" bx="0.000000" by="300.000000" bz="-1650.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-1850.000000" bx="0.000000" by="300.000000" bz="-1800.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-2000.000000" bx="0.000000" by="300.000000" bz="-1950.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-2150.000000" bx="0.000000" by="300.000000" bz="-2100.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-2300.000000" bx="0.000000" by="300.000000" bz="-2250.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-2450.000000" bx="0.000000" by="300.000000" bz="-2400.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-2600.000000" bx="0.000000" by="300.000000" bz="-2550.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-2750.000000" bx="0.000000" by="300.000000" bz="-2700.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-2900.000000" bx="0.000000" by="300.000000" bz="-2850.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-3050.000000" bx="0.000000" by="300.000000" bz="-3000.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-3200.000000" bx="0.000000" by="300.000000" bz="-3150.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-3350.000000" bx="0.000000" by="300.000000" bz="-3300.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-3500.000000" bx="0.000000" by="300.000000" bz="-3450.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-3650.000000" bx="0.000000" by="300.000000" bz="-3600.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-3800.000000" bx="0.000000" by="300.000000" bz="-3750.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-3950.000000" bx="0.000000" by="300.000000" bz="-3900.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-4100.000000" bx="0.000000" by="300.000000" bz="-4050.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-4250.000000" bx="0.000000" by="300.000000" bz="-4200.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-4400.000000" bx="0.000000" by="300.000000" bz="-4350.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-4550.000000" bx="0.000000" by="300.000000" bz="-4500.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-4700.000000" bx="0.000000" by="300.000000" bz="-4650.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-4850.000000" bx="0.000000" by="300.000000" bz="-4800.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-5000.000000" bx="0.000000" by="300.000000" bz="-4950.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-5150.000000" bx="0.000000" by="300.000000" bz="-5100.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-5300.000000" bx="0.000000" by="300.000000" bz="-5250.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-5450.000000" bx="0.000000" by="300.000000" bz="-5400.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-5600.000000" bx="0.000000" by="300.000000" bz="-5550.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-5750.000000" bx="0.000000" by="300.000000" bz="-5700.000000" id_mat="orange"/>
+		<object type="box" ax="-50.000000" ay="0.000000" az="-5900.000000" bx="0.000000" by="300.000000" bz="-5850.000000" id_mat="orange"/>
+<object type="box" ax="-500.000000" ay="0.000000" az="-50.000000" bx="-450.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-650.000000" ay="0.000000" az="-50.000000" bx="-600.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-800.000000" ay="0.000000" az="-50.000000" bx="-750.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-950.000000" ay="0.000000" az="-50.000000" bx="-900.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-1100.000000" ay="0.000000" az="-50.000000" bx="-1050.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-1250.000000" ay="0.000000" az="-50.000000" bx="-1200.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-1400.000000" ay="0.000000" az="-50.000000" bx="-1350.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-1550.000000" ay="0.000000" az="-50.000000" bx="-1500.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-1700.000000" ay="0.000000" az="-50.000000" bx="-1650.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-1850.000000" ay="0.000000" az="-50.000000" bx="-1800.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-2000.000000" ay="0.000000" az="-50.000000" bx="-1950.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-2150.000000" ay="0.000000" az="-50.000000" bx="-2100.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-2300.000000" ay="0.000000" az="-50.000000" bx="-2250.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-2450.000000" ay="0.000000" az="-50.000000" bx="-2400.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-2600.000000" ay="0.000000" az="-50.000000" bx="-2550.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-2750.000000" ay="0.000000" az="-50.000000" bx="-2700.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-2900.000000" ay="0.000000" az="-50.000000" bx="-2850.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-3050.000000" ay="0.000000" az="-50.000000" bx="-3000.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-3200.000000" ay="0.000000" az="-50.000000" bx="-3150.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-3350.000000" ay="0.000000" az="-50.000000" bx="-3300.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-3500.000000" ay="0.000000" az="-50.000000" bx="-3450.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-3650.000000" ay="0.000000" az="-50.000000" bx="-3600.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-3800.000000" ay="0.000000" az="-50.000000" bx="-3750.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-3950.000000" ay="0.000000" az="-50.000000" bx="-3900.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-4100.000000" ay="0.000000" az="-50.000000" bx="-4050.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-4250.000000" ay="0.000000" az="-50.000000" bx="-4200.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-4400.000000" ay="0.000000" az="-50.000000" bx="-4350.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-4550.000000" ay="0.000000" az="-50.000000" bx="-4500.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-4700.000000" ay="0.000000" az="-50.000000" bx="-4650.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-4850.000000" ay="0.000000" az="-50.000000" bx="-4800.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-5000.000000" ay="0.000000" az="-50.000000" bx="-4950.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-5150.000000" ay="0.000000" az="-50.000000" bx="-5100.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-5300.000000" ay="0.000000" az="-50.000000" bx="-5250.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-5450.000000" ay="0.000000" az="-50.000000" bx="-5400.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-5600.000000" ay="0.000000" az="-50.000000" bx="-5550.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-5750.000000" ay="0.000000" az="-50.000000" bx="-5700.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-5900.000000" ay="0.000000" az="-50.000000" bx="-5850.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-6050.000000" ay="0.000000" az="-50.000000" bx="-6000.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-6200.000000" ay="0.000000" az="-50.000000" bx="-6150.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+<object type="box" ax="-6350.000000" ay="0.000000" az="-50.000000" bx="-6300.000000" by="150.000000" bz="0.000000" id_mat="orange"/>
+	</objects>
+
+	<lights>
+		<light type="environment" id_mat="back" color="1 1 1" radiance="1"/>
+	</lights>
+</scene>

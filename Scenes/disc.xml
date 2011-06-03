@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<!-- <rendering size="800 400" depth="5" /> -->
+		<camera type="pinhole" eye="-8, 10.5, -40" lookat="1, 4, 0" up="0, -1, 0"
+			dis="500" zoom="800"/>-->
+	</image>
+
+	<renderpass>
+		<pass type="light"/>
+		<pass type="texture"/>
+		<!-- <pass type="area light"/> -->
+		<!-- <pass type="oversampling" aa="9"/> -->
+	</renderpass>
+
+	<materials>
+		<material type="matte" color=".75 .75 .95"
+			kd="1" id="matteblue"/>
+		<material type="checker" color="1 1 1" color2="0.75 0.75 0.75"
+			  id="checkerblanc"  kd="0.75" size="0.5"
+			  ks="0.4" exp="100" kr="0.7" cr="0.75"
+			  kt="0" ior="0"/>
+	</materials>
+
+	<objects>
+		<!-- <object type="cone" coor="0 0 0"  rot="0 0 10" size="3" alpha="50" y1="0" y2="0" id_mat="matteblue"/> -->
+		<object type="sphere" coor="30 0 0" size="5" id_mat="checkerblanc"/>
+		<object type="disc" coor="0 0 0" normal="1 1 1" size="2" id_mat="matteblue"/>
+		<object type="disc" coor="-2 3 0" normal="1 0 1" size="2" id_mat="matteblue"/>
+		<object type="disc" coor="3 1 -0" normal="0 1 1" size="2" id_mat="matteblue"/>
+		<object type="disc" coor="1 3 1" normal="1 -1 0" size="2" id_mat="matteblue"/>
+		<!-- <object type="plane"  coor="0 -5 0" normal="0 1 0" id_mat="checkerblanc"/> -->
+	</objects>
+
+	<lights>
+		<!-- <light type="point" color="1.0, 1.0, 1.0" radiance="4.5" pos="40 50 0"/> -->
+		<light type="point" color="1.0, 1.0, 1.0" radiance="4.5" pos="-10 20 10"/>
+		<light type="directional" color="1.0, 1.0, 1.0" radiance="4.5" vec="-1 0 0"/>
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.25"/>
+	</lights>
+</scene>

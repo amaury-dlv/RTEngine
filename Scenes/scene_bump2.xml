@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<camera type="pinhole" eye="0, -40, 0" lookat="0, 0, 0" up="0, 1, 0"
+			dis="1000" zoom="800"/>-->
+		<camera type="fisheye" eye="-100 -5 0" lookat="0 0 0" up="0, 1, 0"
+			psi="30"/>-->
+		<camera type="spherical" eye="-100, -5, 0" lookat="0 0 0" up="0, 1, 0"
+			lambda="50" psi="30"/>-->
+	</image>
+
+	<renderpass>
+	  <!-- <pass type="oversampling" aa="16"/> -->
+	  <pass type="light"/>
+	  <!-- <pass type="shadow"/> -->
+	  <pass type="bump"/>
+	  <!-- <pass type="texture"/> -->
+	  <pass type="transparency"/>
+	  <!-- <pass type="reflection"/> -->
+	</renderpass>
+
+	<materials>
+	  <!-- you can set bumpt with -> basic / uniform / waves / soft_waves / hard_waves / experimental / lol1 / lol2 -->
+		<material type="phong" bumpt="soft_waves" color="0.76 0 0.86"
+			  kd="0.5" ks="0.2" exp="2000" kr="1" cr="1" id="waves"/>
+
+		<material type="bump" bumpt="hard_waves=" color="0.76 0 0.86"
+			  kd="0.5" ks="0.6" kr="1" cr="1"
+			  kt="1" ior="1"
+			  exp="1000000" id="spherebump"/>
+
+		<!-- <material type="reflective" color="0 0 0" kd="0." ks="0" kr="1" cr="1" exp="1000000" id="reflective"/>-\-> -->
+		<!-- <material type="reflective" color="0 0 0" kd="0." ks="0" exp="10000000000" kr="1" cr="1" id="bluereflective"/> -->
+
+		<material type="matte" color="0 .5 0" id="mattegreen"  kd="0.75"/>
+		<material type="matte" color=".5 0 0" id="mattered"  kd="0.75"/>
+		<material type="matte" color="1 0 1" id="mattepink"  kd="0.75"/>
+		<material type="matte" color="1 1 1" id="matteblanc"  kd="0.75"/>
+		<material type="matte" color="1 1 1" id="matteblanc2"  kd="0.25"/>
+
+		<!-- -->
+
+		<material type="phong" color="0.2 0.2 0.98" kd="0.75" ks="0.4" exp="100" id="bluephong"/>
+		<material type="phong" color="1 0 0" kd="0.75" ks="0.9" exp="100" id="redphong"/>
+		<material type="phong" color="0 1 0" kd="0.75" ks="0.4" exp="100" id="greenphong"/>
+
+		<material type="bump" bumpt="sphere1" color="1.1 0.9 1.2"
+			  kd="0.5" ks="0.75" kr="0.5" cr="0.5"
+			  kt="1" ior="1.5"
+			  exp="1000000" id="sphere3"/>
+
+		<material type="bump" bumpt="soft_waves" color="0.26 0.18 0.6"
+			  kd="0.5" ks="0.75" kr="0.5" cr="0.5"
+			  kt="1" ior="1.5"
+			  exp="1000000" id="bumping"/>
+
+		<material type="bump" bumpt="sphere2" color="0.7 0.9 0."
+			  kd="0.5" ks="0.75" kr="0.5" cr="0.5"
+			  kt="1" ior="1.5"
+			  exp="1000000" id="sphere2"/>
+
+		<material type="bump" bumpt="sphere2" color="0.86 0.18 0.7"
+			  kd="0.5" ks="0.75" kr="0.5" cr="0.5"
+			  kt="1" ior="1.5"
+			  exp="1000000" id="yellophong"/>
+	</materials>
+
+	<objects>
+		<!-- <object type="plane" coor="-12, 0, 0" normal="1 0 0" id_mat="bumping"/> -->
+		<!-- <object type="plane" coor="12, 0, 0" normal="-1 0 0" id_mat="bumping"/> -->
+		<!-- <object type="plane" coor="0, 10, 0" normal="0 -1 0" id_mat="bumping"/> -->
+		<object type="tore" coor="0, 3, 0" rot="45 30 0" rad="4" t="1.0" id_mat="yellophong"/>
+
+		<object type="plane" coor="0, 0, 10" normal="0 0 -1" id_mat="bumping"/>-->
+		<object type="sphere" coor="30 100 -30" size="20" id_mat="sphere3"/>
+		<object type="sphere" coor="-10 10 -10" size="10" id_mat="sphere2"/>
+		<!-- <object type="sphere" coor="-10 1000 -100" size="100" id_mat="greenphong"/> -->
+	</objects>
+
+	<lights>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="3.5" pos="0 -10 -6"/>
+		<light type="directional" color="1.0, 1.0, 1.0" radiance="3." vec="0 1 0"/>
+		<!-- <light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/> -->
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.2"/>
+		<!-- <light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/> -->
+		<!-- <light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/> -->
+		<!-- <light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/> -->
+	</lights>
+</scene>

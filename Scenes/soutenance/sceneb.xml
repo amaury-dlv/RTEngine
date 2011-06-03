@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- scene 1 -->
+<scene>
+    <image>
+        <camera type="pinhole" eye="50, 0, 0" lookat="0, 0, 0" up="0, 1, 0" dis="1080" zoom="0.9"/>
+    </image>
+    <renderpass>
+	    <pass type="oversampling" aa="4"/>
+    </renderpass>
+    <materials>
+        <material type="matte" color="1 1 1" id="blanc" ka="0.35" kd="0.75"/>
+        <material type="phong" color="1 1 1" id="bph" ka="0.2" kd="0.85" ks="0.1" exp="20"/>
+    </materials>
+    <objects>
+        <object type="sphere" size="10" id_mat="blanc"/>
+    </objects>
+    <lights>
+        <light type="point" pos="0.0, -80.0, 80.0" color="1.0, 1.0, 1.0" radiance="1.5" shadows="true"/>
+        <light type="directional" vec="0.0, 1.0, 0.0" color="0.6, 0.7, 1.0" radiance="1.2" shadows="true"/>
+    </lights>
+</scene>

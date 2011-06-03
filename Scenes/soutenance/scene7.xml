@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<rendering size="1280 720"/>
+		<camera type="pinhole" eye="0, -20, -50" lookat="0, 0, 0" up="0, 1, 0" dis="980"/>
+	</image>
+	<renderpass>
+		<!-- <pass type="oversampling" aa="4"/> -->
+		<pass type="light"/>
+		<!-- <pass type="bump"/> -->
+		<pass type="shadow"/>
+		<!-- <pass type="transparency"/> -->
+		<pass type="reflection"/>
+		<!-- <pass type="texture"/> -->
+		<!-- <pass type="area light"/> -->
+		<!-- <pass type="path tracing" samples="10" /> -->
+	</renderpass>
+	<materials>
+		<material type="phong" id="blancphong" color="1.0, 1.0, 1.0" ka="0.2" kd="0.4" ks="0.1" exp="1000"/>
+		<material type="matte" id="blanc" color="1.0, 1.0, 1.0" ka="0.35" kd="0.75"/>
+		<material type="phong" id="bph" color="1.0, 1.0, 1.0" ka="0.2" kd="0.85" ks="0.1" exp="20"/>
+		<material type="reflective" id="refl" color="1.0, 1.0, 1.0" ka="0.0" kd="0.0" ks="1" exp="100" kr="1" cr="1" ior="1"/>
+		<material type="emissive" id="emirr" color="1.0, 0.8, 0.5" radiance="10.0" ls="60"/>
+	</materials>
+	<objects>
+		<object type="plane" coor="0.0, 10.0, 0.0" normal="0.0, -1.0, 0.0" id_mat="bph"/>
+		<object type="cylinder" coor="10 0 10" y1="10" y2="-10" size="3" id_mat="refl" T="10, 0, 10"/>
+		<object type="cylinder" coor="-10 0 10" y1="10" y2="-10" size="3" id_mat="refl" T="-10, 0, 10"/>
+		<object type="cylinder" coor="10 0 -10" y1="10" y2="-10" size="3" id_mat="refl" T="10, 0, -10"/>
+		<object type="cylinder" coor="-10 0 -10" y1="10" y2="-10" size="3" id_mat="refl" T="-10, 0, -10"/>
+		<object type="sphere" coor="0.0, -8.0, 0.0" size="3.0" id_mat="blancphong"/>
+		<object type="sphere" coor="0.0, 0.0, 0.0" size="3.0" id_mat="blancphong"/>
+		<object type="sphere" coor="0.0, 8.0, 0.0" size="3.0" id_mat="blancphong"/>
+	</objects>
+	<lights>
+		<light type="point" pos="0.0, -50.0, 0.0" color="1.0, 1.0, 1.0" radiance="0.5"/>
+		<light type="point" pos="10.0, 0.0, 0.0" color="0.6, 0.7, 1.0" radiance="1.2"/>
+	</lights>
+</scene>

@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<!-- noiset="turbulence" / "fBm" / "fractal_sum" -->
+<scene>
+	<image>
+		<!-- <rendering size="600 600" depth="10"/> -->
+		<rendering size="600 600" depth="10" sampler="100x256" samplerSharing="0" />
+		<camera type="pinhole" eye="0 25 100" lookat="0, -1, 0" up="0, -1, 0"
+			dis="5500" zoom="800"/>-->
+	</image>
+
+	<renderpass>
+		<pass type="oversampling" aa="100"/>
+	</renderpass>
+
+	<materials>
+
+		-- 1st spheres --
+		<material type="noise" noiset="fbm" color="0.4 1.0 0.5" color2="1 1 1" e="0"
+			  octaves="1.0" gain="0.9" lacunarity="8" max="1" min="0"
+			  id="sphere1"  kd="0.85" ks="0.5" exp="100" kr="0.7" cr="0.75"/>
+
+		<material type="noise" noiset="fbm" color="0.5 0.75 1.0" color2="1 1 1" e="0"
+			  octaves="6.0" gain="0.5" lacunarity="2.0" max="1.0" min="0.0"
+			  id="sphere2"  kd="0.85" ks="0.5" exp="100" kr="0.7" cr="0.75"/>
+
+		<material type="noise" noiset="fbm" color="0.8 1 0.6" color2="1 1 1" e="0"
+			  octaves="6.0" gain="0.5" lacunarity="8.0" max="1" min="0"
+			  id="sphere3"  kd="0.85" ks="0.5" exp="100" kr="0.7" cr="0.75"/>
+
+		<material type="noise" noiset="fbm" color="0.5 0.36 0" color2="1 1 1" e="0"
+			  octaves="3" gain="0.9" lacunarity="1.5" max="10" min="0"
+			  id="sphere4"  kd="0.85" ks="0.5" exp="100" kr="0.7" cr="0.75"/>
+
+		-- 2nd spheres --
+		<material type="noise" noiset="turbulence" color="0.6 0.3 0.7" color2="1 1 1" e="0"
+			  octaves="1.0" gain="0.9" lacunarity="8" max="1" min="0"
+			  id="sphere5"  kd="0.85" ks="0.5" exp="100" kr="0.7" cr="0.75"/>
+
+		<material type="noise" noiset="turbulence" color="0.7 0.75 1.0" color2="1 1 1" e="0"
+			  octaves="6.0" gain="0.5" lacunarity="2.0" max="1.0" min="0.0"
+			  id="sphere6"  kd="0.85" ks="0.5" exp="100" kr="0.7" cr="0.75"/>
+
+		<material type="noise" noiset="turbulence" color="0.3 0.6 0.8" color2="1 1 1" e="0"
+			  octaves="6.0" gain="0.5" lacunarity="8.0" max="1" min="0"
+			  id="sphere7"  kd="0.85" ks="0.5" exp="100" kr="0.7" cr="0.75"/>
+
+		<material type="noise" noiset="turbulence" color="1.0 0.16 0.1" color2="1 1 1" e="0"
+			  octaves="3" gain="0.9" lacunarity="1.5" max="10" min="0"
+			  id="sphere8"  kd="0.85" ks="0.9" exp="100" kr="0.7" cr=".75"/>
+
+		-- 3rd spheres --
+		<material type="noise" noiset="turbulence" color="0.0 0.3 0.78" color2="1 1 1" e="0"
+			  octaves="6" gain="0.5" lacunarity="2.0" max="1.2" min="0"
+			  id="sphere9"  kd="0.85" ks="0.5" exp="100" kr="0.7" cr="0.75"/>
+
+		<material type="noise" noiset="turbulence" color="1.0 0.7 0" color2="1 1 1" e="0"
+			  octaves="6" gain="0.5" lacunarity="2.0" max="0.75" min="0.15"
+			  id="sphere10"  kd="0.85" ks="0.5" exp="100" kr="0.7" cr="0.75"/>
+
+		<material type="noise" noiset="fbm" color="0.3 0.6 0.8" color2="1 1 1" e="8"
+			  octaves="2.0" gain="0.5" lacunarity="4.0" max="1" min="0"
+			  id="sphere11"  kd="0.85" ks="0.5" exp="100" kr="0.7" cr="0.75"/>
+
+		<material type="noise" noiset="fbm" color="1.0 1.0 0.0" color2="1 1 1" e="8"
+			  octaves="4" gain="0.5" lacunarity="2.0" max="1" min="0"
+			  id="sphere12"  kd="0.85" ks="0.5" exp="100" kr="0.7" cr="0.75"/>
+
+		-- 4th spheres --
+		<material type="noise" noiset="fbm" color="0.7 1.0 0.5" color2="1 1 1" e="4"
+			  octaves="6.0" gain="0.5" lacunarity="6.0" max="1" min="0"
+			  id="sphere13"  kd="0.85" ks="0.5" exp="100" kr="0.7" cr="0.75"/>
+
+		<material type="noise" noiset="turbulence" color="0.23 0.82 0.72" color2="1 1 1" e="10"
+			  octaves="1.0" gain="0.5" lacunarity="2.0" max="1" min="0"
+			  id="sphere14"  kd="0.85" ks="0.5" exp="100" kr="0.7" cr="0.75"/>
+
+		<material type="noise" noiset="turbulence" color="0.89 0.77 0.56" color2="1 1 1" e="4"
+			  octaves="6" gain="0.2" lacunarity="2" max="1" min="0"
+			  id="sphere15"  kd="0.85" ks="0.5" exp="100" kr="0.7" cr="0.75"/>
+
+		<material type="noise" noiset="turbulence" color="0.5 0.36 0.87" color2="1 1 1" e="5"
+			  octaves="2" gain="0.2" lacunarity="0.5" max="1" min="0"
+			  id="sphere16"  kd="0.85" ks="0.5" exp="100" kr="0.7" cr="0.75"/>
+	</materials>
+
+	<objects>
+		-- 1st spheres --
+		<object type="sphere" coor="-3.3 2.5 0" size="1" id_mat="sphere1"/>
+		<object type="sphere" coor="-1.1 2.5 0" size="1" id_mat="sphere2"/>
+		<object type="sphere" coor="1.1 2.5 0" size="1" id_mat="sphere3"/>
+		<object type="sphere" coor="3.3 2.5 0" size="1" id_mat="sphere4"/>
+
+		-- 2nd spheres --
+		<object type="sphere" coor="-3.3 0 0" size="1" id_mat="sphere5"/>
+		<object type="sphere" coor="-1.1 0 0" size="1" id_mat="sphere6"/>
+		<object type="sphere" coor="1.1 0 0" size="1" id_mat="sphere7"/>
+		<object type="sphere" coor="3.3 0 0" size="1" id_mat="sphere8"/>
+
+		-- 3rd spheres --
+		<object type="sphere" coor="-3.3 -2.5 0" size="1" id_mat="sphere9"/>
+		<object type="sphere" coor="-1.1 -2.5 0" size="1" id_mat="sphere10"/>
+		<object type="sphere" coor="1.1 -2.5 0" size="1" id_mat="sphere11"/>
+		<object type="sphere" coor="3.3 -2.5 0" size="1" id_mat="sphere12"/>
+
+		-- 4th spheres --
+		<object type="sphere" coor="-3.3 -5 0" size="1" id_mat="sphere13"/>
+		<object type="sphere" coor="-1.1 -5 0" size="1" id_mat="sphere14"/>
+		<object type="sphere" coor="1.1 -5 0" size="1" id_mat="sphere15"/>
+		<object type="sphere" coor="3.3 -5 0" size="1" id_mat="sphere16"/>
+	</objects>
+
+	<lights>
+		<!-- <light type="directional" color="1.0, 1.0, 1.0" radiance="4.5" vec="200 250 300"/> -->
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.1"/>
+ 		<light type="point" color="1.0, 1.0, 1.0" radiance="3.9" pos="200 250 300"/>
+	</lights>
+</scene>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<rendering size="1280 720" depth="4"/>
+		<camera type="pinhole" eye="0, -10, 40" lookat="0, 0, 0" up="0, 1, 0" dis="470"/>
+	</image>
+	<renderpass>
+		<!-- <pass type="oversampling" aa="4"/> -->
+		<pass type="light"/>
+		<!-- <pass type="bump"/> -->
+		<pass type="shadow"/>
+		<!-- <pass type="transparency"/> -->
+		<pass type="reflection"/>
+		<!-- <pass type="texture"/> -->
+		<!-- <pass type="area light"/> -->
+		<!-- <pass type="path tracing" samples="10" /> -->
+	</renderpass>
+	<materials>
+	        <material type="phong" id="phong1" color="1.0, 1.0, 1.0" kd="0.7" ks="0.57" exp="1000"/>
+		<material type="matte" id="matte"  color="1.0, 1.0, 1.0" kd="0.75" ks="1"/>
+		<material type="phong" id="phong2" color="1.0, 1.0, 1.0" kd="0.85" ks="0.65" exp="20"/>
+		<material type="reflective" id="reflective" color="1.0, 1.0, 1.0" kd="0.0" ks="1" exp="100" kr="1" cr="1"/>
+	</materials>
+	<objects>
+	        <object type="plane" coor="0.0, 10.0, 0.0" normal="0.0, -1.0, 0.0" id_mat="phong2"/>
+		<object type="cylinder" coor="20.0, 3.0, 0.0" rot="90 10 0" size="4" y1="200" y2="-200" id_mat="reflective"/>
+		<object type="sphere" coor="20.0, 3.0, 0.0" size="6.0" id_mat="reflective"/>
+	</objects>
+	<lights>
+	        <light type="point" pos="-10.0, 0.0, 0.0" color="1.0, 1.0, 1.0" radiance="1.5"/>
+		<light type="point" pos="10.0, 0.0, 0.0" color="0.6, 0.7, 1.0" radiance="1.2"/>
+		<light type="point" pos="0.0, -10.0, 0.0" color="1.0, 1.0, 0.6" radiance="0.56"/>
+	</lights>
+</scene>

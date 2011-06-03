@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<!-- <rendering size="600 400" depth="3"/> -->
+		<rendering size="600 400" depth="4" sampler="900x1777" samplerSharing="0"/>
+		<camera type="pinhole" eye="0 100 2" lookat="0 0 2" up="0, -1, 0" dis="5000"/>
+	</image>
+
+	<renderpass>
+		<!-- <pass type="light"/> -->
+		<!-- <pass type="shadow"/> -->
+		<!-- <pass type="texture"/> -->
+		<!-- <pass type="transparency"/> -->
+		<!-- <pass type="reflection"/> -->
+		<!-- <pass type="area light" samples="4"/> -->
+		<pass type="path tracing" samples="900"/>
+		<!-- <pass type="oversampling" aa="16"/> -->
+	</renderpass>
+
+	<materials>
+		<material type="emissive" color=".75 1 .75" id="emissive light" ls="1.6"/>
+		<material type="emissive" color=".75 1 .75" id="env light" ls="0.20"/>
+
+		<material type="reflective" color="1 0.5 0.25" id="reflective cylinder"
+			  kd="0.4" ks="0.5" exp="1" kr="0.95" cr="5"/>
+
+		<material type="matte" color="1 1 1" kd="0.75" id="matte plane"/>
+	</materials>
+
+	<objects>
+		<object type="sphere" coor="-2 7 6" size="1" id_mat="emissive light"/>
+
+		<object type="cylinder" coor="0 0 0" size="3.0" y1="2" y2="-1" id_mat="reflective cylinder"/>
+
+		<object type="plane" coor="0 -1 0" normal="0 1 0" id_mat="matte plane"/>
+	</objects>
+
+	<lights>
+		<light type="environment" color="0.75 1 0.75" radiance="1" id_mat="env light" />
+	</lights>
+</scene>

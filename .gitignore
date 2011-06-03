@@ -1,0 +1,10 @@
+serveur
+client
+rt
+*.o
+*~
+#*#
+tags
+*.vim
+.*.sw*
+Makefile.dep

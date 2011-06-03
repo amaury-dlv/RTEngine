@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<!--
+		<rendering depth="1000" size="300 300" />
+		-->
+		<rendering depth="1000" size="800 800" samplerSharing="0" sampler="900x1777" />
+		<camera type="pinhole" eye="0, -10, 0" lookat="0, 0, 0" up="0, 1, 0"
+			dis="400" zoom="800"/>-->
+		<camera type="fisheye" eye="-100 -5 0" lookat="0 0 0" up="0, 1, 0"
+			psi="30"/>-->
+		<camera type="spherical" eye="-100, -5, 0" lookat="0 0 0" up="0, 1, 0"
+			lambda="50" psi="30"/>-->
+	</image>
+	<renderpass>
+          <!--
+		<pass type="area light"/>
+		<pass type="oversampling" aa="4" />
+		<pass type="area light"/>
+		<pass type="shadow"/>
+		<pass type="transparency"/>
+		<pass type="reflection"/>
+                -->
+                <!--
+                <pass type="gamma" e="0.5"/>
+                <pass type="tone mapping" coeff="40"/>
+              -->
+		<pass type="path tracing" samples="25" />
+	</renderpass>
+	<materials>
+		<material type="matte" id="matte1" kd="0.6" color=".57 .025 .025"/>
+		<material type="matte" id="matte2" kd="0.6" color=".37 .59 .2"/>
+		<material type="matte" id="matte3" kd="0.6" color="1 1 1"/>
+		<material type="emissive" id="emissive" color="1 .73 .4" ls="25"/>
+		<material type="reflective" color="1 1 1" kd="0." ks="1" kr="1" cr="1" exp="1000" id="reflective"/>-->
+		<material type="transparent" color="1 1 1" kd="0.5" ks="1" exp="100"
+			kr="0.5" cr="1"
+			kt="1" ior="1.15" id="transparent"/>
+		<material type="transparent" color="1 1 1" kd="0.5" ks="1" exp="100"
+			kr="0.5" cr="1"
+			kt="1" ior="3" id="transparent2"/>
+	</materials>
+	<objects>
+		<object type="plane" coor="-10, 0, 0" normal="1 0 0" id_mat="matte1"/>
+		<object type="plane" coor="10, 0, 0" normal="-1 0 0" id_mat="matte2"/>
+		<object type="plane" coor="0, 10, 0" normal="0 -1 0" id_mat="matte3"/>
+		<object type="plane" coor="0, -10.1, 0" normal="0 1 0" id_mat="matte3"/>
+		<object type="plane" coor="0, 0, 10" normal="0 0 -1" id_mat="matte3"/>
+		<object type="plane" coor="0, 0, -10" normal="0 0 1" id_mat="matte3"/>
+		<object type="rectangle" id_mat="emissive"
+			coor="-2 4 -9.99" normal="0 0 1"
+			u="4 0 0" v="0 2 0"/>
+		<object type="cone" rot="60, 0, 90" coor="-0.5, 5.5, 6" alpha="0.4" y1="-3" y2="0" id_mat="transparent"/>
+		<object type="sphere" coor="-4.5, 7, 7" size="3" id_mat="reflective"/>
+		<object type="sphere" coor="4.5, 7, 7" size="2" id_mat="transparent"/>
+		<!--
+		<object type="sphere" coor="0, 7, 7" size="2" id_mat="transparent2"/>
+		<object type="sphere" coor="0, 5, -10" size="2" id_mat="emissive"/>
+		<object type="sphere" coor="-6.5, 7.5, 10" size="1" id_mat="matte1"/>
+		<object type="sphere" coor="0, 5, -2" size="1" id_mat="matte1"/>
+		<object type="box" ax="0" ay="-2" az="2.5" bx="-2.5" by="-0.5" bz="5" id_mat="matte1"/>
+		-->
+		<!--
+		<object type="sphere" coor="-10 0 10" size="5" id_mat="bluephong"/>
+		<object type="sphere" coor="-50 0 -10" size="10" id_mat="bluephong"/>
+		<object type="sphere" coor="-30 0 0" size="5" id_mat="greenphong"/>
+		<object type="sphere" coor="0 0 0" size="5" id_mat="mattegreen"/>
+		<object type="sphere" coor="-80 0 -10" size="3" id_mat="bluephong"/>
+		<object type="sphere" coor="0 0 15" size="5" id_mat="mattegreen"/>-->
+	</objects>
+	<lights>
+		<!--
+                <light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="500" pos="0 -10 -6"/>
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.5"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/>-->
+	</lights>
+</scene>

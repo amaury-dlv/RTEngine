@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+
+	<image>
+		<rendering size="600 400" depth="10" sampler="900x1777" samplerSharing="0" />
+		<camera type="pinhole" eye="100 45 100" lookat="-10 35 0" up="0, -1, 0"
+			dis="400"/>
+	</image>
+
+	<renderpass>
+		<pass type="path tracing" samples="3600"/>
+		<!-- <pass type="path tracing" samples="4"/> -->
+		<!-- <pass type="oversampling" aa="256"/> -->
+		<!-- <pass type="light"/> -->
+		<!-- <pass type="ambient occlusion" samples="100"/> -->
+		<!-- <pass type="reflection"/> -->
+		<!-- <pass type="texture"/> -->
+		<!-- <pass type="shadow"/> -->
+		<!-- <pass type="area light" samples="4"/> -->
+	</renderpass>
+
+	<materials>
+ 		<material type="glossy" color="1 1 0.3" kd="0.0" ks="0.5" kr="0.9" cr="1" exp="100" id="large sphere"/>
+		<material type="matte" color=".75 0 0" id="small sphere" ka="0.4" kd="0.5"/>
+		<material type="reflective" color=".75 .75 .75" id="medium sphere"
+			  ka="0.0" kd="0.5" ks="0.2" exp="20" kr="0.8" cr="1"/>
+		<material type="glossy" color=".35 .75 .55" kd="0.0" ks="0.75" kr="0.9" cr="1" exp="10" id="cylinder"/>
+		<material type="glossy" color="0.4 0.5 1.0" kd="0.3" ks="0.9" kr="0.9" cr="1.5" exp="100" id="box"/>
+		<material type="matte" color=".75 .75 .75" id="ground plane" ka="0.4" kd="0.6"/>
+		<!-- <material type="checker" color="1 1 0.5" color2="1 1 1" size="20" id="ground plane" -->
+		<!-- 	  ka="0.0" kd="0.0" ks="0.0" exp="1" kr="0.0" cr="1" kt="1" ior="1"/> -->
+		<material type="emissive" color="1 1 0.5" id="environment light" ls="0.85"/>
+	</materials>
+
+	<objects>
+		<object type="sphere" coor="38 20 -24" size="20" id_mat="large sphere"/>
+		<object type="sphere" coor="34 12 13" size="12" id_mat="small sphere"/>
+		<object type="sphere" coor="-7 15 42" size="16" id_mat="medium sphere"/>
+		<object type="cylinder" coor="0 0 0" size="22" y1="85" y2="0" id_mat="cylinder"/>
+		<object type="box" ax="-35" ay="0" az="-110" bx="-25" by="60" bz="65" id_mat="box"/>
+		<object type="plane" coor="0 0.01 0" normal="0 1 0" id_mat="ground plane"/>
+		<object type="sphere" coor="0 0 0" concave="1" size="1000000.0" id_mat="environment light"/>
+	</objects>
+
+	<lights>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="1.5" pos="150 250 -150"/>
+		<light type="environment" color="1.0, 1.0, 1.0" radiance="0.85" id_mat="environment light" />
+		<!-- <light type="ambient" color="1.0, 1.0, 1.0" radiance="0.5"/> -->
+	</lights>
+
+</scene>

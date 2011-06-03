@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<!-- <rendering size="600 600" depth="5" samplerSharing="0" sampler="100x100"/>z< -->
+		<camera type="pinhole" eye="0, -80, 0" lookat="0, 0, 0" up="0, 1, 0"
+			dis="1000" zoom="800"/>-->
+		<camera type="fisheye" eye="-100 -5 0" lookat="0 0 0" up="0, 1, 0"
+			psi="30"/>-->
+		<camera type="spherical" eye="-100, -5, 0" lookat="0 0 0" up="0, 1, 0"
+			lambda="50" psi="30"/>-->
+	</image>
+
+	<renderpass>
+	  <pass type="light"/>
+	  <pass type="bump"/>
+	  <pass type="transparency"/>
+	</renderpass>
+
+	<materials>
+		<material type="bump" bumpt="sphere1" color="0.26 0.18 0.6"
+			  kd="0.5" ks="0.75" kr="0.5" cr="0.5"
+			  kt="1" ior="1.5"
+			  exp="1000000" id="bumping"/>
+
+		<material type="bump" bumpt="sphere2" color="0.7 0.9 0."
+			  kd="0.5" ks="0.75" kr="0.5" cr="0.5"
+			  kt="1" ior="1.5"
+			  exp="1000000" id="sphere2"/>
+
+		<material type="bump" bumpt="sphere2" color="0.86 0.18 0.7"
+			  kd="0.5" ks="0.75" kr="0.5" cr="0.5"
+			  kt="1" ior="1.5"
+			  exp="1000000" id="yellophong"/>
+	</materials>
+
+	<objects>
+		<object type="tore" coor="0, 10, -10" rot="45 30 0" rad="4" t="1.0" id_mat="yellophong"/>
+		<object type="sphere" coor="-20 10 -10" size="8" id_mat="sphere2"/>
+		<object type="plane" coor="0, 0, 10" normal="0 0 -1" id_mat="bumping"/>-->
+	</objects>
+
+	<lights>
+		<light type="point" color="1.0, 1.0, 1.0" radiance="3.5" pos="0 -10 -6"/>
+		<light type="directional" color="1.0, 1.0, 1.0" radiance="3." vec="0 1 0"/>
+		<!-- <light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/> -->
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.2"/>
+		<!-- <light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/> -->
+		<!-- <light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/> -->
+		<!-- <light type="point" color="1.0, 1.0, 1.0" radiance="1.0" pos="-100 -20 0"/> -->
+	</lights>
+</scene>

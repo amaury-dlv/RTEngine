@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+
+	<image>
+		<rendering size="880 300"/>
+		<!-- <rendering size="600 600" depth="5" sampler="900x1777" samplerSharing="0" /> -->
+		<camera type="pinhole" eye="100 100 300" lookat="-0.2 1.0 0" up="0, -1, 0"
+			dis="12000"/>
+	</image>
+
+	<renderpass>
+		<!-- <pass type="path tracing" samples="3600"/> -->
+		<pass type="oversampling" aa="100"/>
+		<!-- <pass type="light"/> -->
+		<!-- <pass type="reflection"/> -->
+		<!-- <pass type="transparency"/> -->
+		<!-- <pass type="texture"/> -->
+		<!-- <pass type="shadow"/> -->
+	</renderpass>
+
+	<materials>
+		<material type="checker" color="1 1 1" color2="1 0 0" size="0.7"
+			  id="sphere" kd="1" ks="0" exp="100" kr="0" cr="0" kt="0" ior="1"/>
+
+		<material type="checker" color="1 1 1" color2="0 1 0" size="0.79"
+			  id="cylinder" kd="1" ks="0" exp="100" kr="0" cr="0" kt="0" ior="1"/>
+
+		<material type="checker" color="1 1 1" color2="0 0 1" size="0.6"
+			  id="cone" kd="1" ks="0" exp="100" kr="0" cr="0" kt="0" ior="1"/>
+
+		<material type="checker" color="1 0 1" color2="0 0 0" size="0.3"
+			  id="tore" kd="1" ks="0" exp="100" kr="0" cr="0" kt="0" ior="1"/>
+
+		<material type="checker" color="1 1 1" color2="0.75 0.75 0.75" size="1"
+			  id="ground" kd="1" ks="0" exp="100" kr="0" cr="0" kt="0" ior="1"/>
+	</materials>
+
+	<objects>
+		<object type="sphere" coor="-9.5 -1 0" size="2" id_mat="sphere"/>
+		<object type="cylinder" coor="-3.5 0.5 0" size="1.5" y1="2" y2="-3" id_mat="cylinder"/>
+		<object type="cone" coor="2.35 2.5 0" size="1" y1="-4" y2="0" alpha="0.5" id_mat="cone"/>
+		<object type="tore" coor="9.1 1 0" rad="2" t="0.7" rot="-45 160 0" id_mat="tore"/>
+		<object type="plane" coor="0 -100.5 0" normal="0 1 0" id_mat="ground"/>
+	</objects>
+
+	<lights>
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.25"/>
+		<!-- <light type="point" color="1.0, 1.0, 1.0" radiance="1" pos="40 50 0"/> -->
+		<!-- <light type="point" color="1.0, 1.0, 1.0" radiance="1" pos="-10 20 10"/> -->
+		<light type="directional" color="1.0, 1.0, 1.0" radiance="1.5" vec="0 0 1"/>
+		<!-- <light type="environment" color="1.0, 1.0, 1.0" radiance="0.85" id_mat="environment light" /> -->
+	</lights>
+
+</scene>

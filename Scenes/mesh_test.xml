@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!-- tag comment -->
+<scene>
+	<image>
+		<rendering size="500 500"/>
+		<camera type="pinhole" eye="0, 0, 100" lookat="0, 1, 0" up="0, -1, 0"
+			dis="500.0" zoom="800"/>
+	</image>
+
+	<renderpass>
+		<pass type="light"/>
+		<pass type="shadow"/>
+		<!-- <pass type="texture"/> -->
+		<!-- <pass type="transparency"/> -->
+		<!-- <pass type="reflection"/> -->
+		<!-- <pass type="area light" samples="16"/> -->
+		<!-- <pass type="oversampling" aa="16"/> -->
+	</renderpass>
+
+	<materials>
+		<material type="matte" color="0.95 0.64 0.30" kd="0.35" ks="0.0" exp="100"
+			  id="orange"/>
+	</materials>
+
+	<objects>
+		<object type="mesh" id_mat="orange"
+			shape="flat"
+			size="10"
+			file="Meshes/horse97k.ply"/>
+	</objects>
+
+	<lights>
+		<light type="ambient" color="1.0, 1.0, 1.0" radiance="0.5"/>
+	</lights>
+</scene>
