@@ -11,10 +11,10 @@ model). Note this does not help for performances either ;).
 
 # Renderings #
 
-* [Slides](slides.pdf) (in French)
+* [Slides](slides.pdf?raw=true) (in French)
 * [Gallery](Gallery/)
 
 The following images were rendered in ~1h each on a 200+ node cluster.
 
-![]("Gallery/dragon.jpg")
-![]("Gallery/cornell.png")
+![](Gallery/dragon.jpg)
+![](Gallery/cornell.png)
